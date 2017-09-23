@@ -1,6 +1,7 @@
-package com.xinhnguyen.persistence;
+package com.xinhnguyen.persistence.seed;
 
 import com.xinhnguyen.domain.Hotel;
+import com.xinhnguyen.persistence.repository.HotelRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

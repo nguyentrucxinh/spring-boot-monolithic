@@ -1,20 +1,27 @@
 # TODO:
-
-- [ ] Migrations
-- [ ] Seeding
 - [x] REST
 - [x] Service
 - [x] Repository
+- [x] H2
+- [ ] JPA
+- [ ] MySQL
+- [ ] Migrations
+- [ ] Seeding
+- [ ] MongoDB
 - [ ] Logging
-- [ ] Swagger
-- [ ] Hibernate
+- [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT
+
+# NEXT: 
 - [ ] Cache
 - [ ] Session & Cookie
-- [ ] Multilangual
+- [ ] Multi-language
 - [ ] Mail
 - [ ] Task scheduling
 - [ ] File storage
-- [ ] HATOAS
 - [ ] Mocking
+
+# 3RD PARTY:
+- [ ] Swagger
+- [ ] Hibernate
