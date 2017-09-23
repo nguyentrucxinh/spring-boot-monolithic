@@ -20,4 +20,30 @@ public class HotelServiceImpl implements HotelService {
     public List<Hotel> all() {
         return hotelRepository.findAll();
     }
+
+    @Override
+    public Hotel one(Long id) {
+        return hotelRepository.findOne(id);
+    }
+
+    @Override
+    public Long createOne(Hotel hotel) {
+        return hotelRepository.save(hotel).getId();
+    }
+
+    @Override
+    public void updateOne(Long id, Hotel hotel) {
+        hotel.setId(id);
+        hotelRepository.save(hotel);
+    }
+
+    @Override
+    public void deleteOne(Long id) {
+        hotelRepository.delete(hotelRepository.findOne(id));
+    }
+
+    @Override
+    public void deactivateOne(Long id) {
+
+    }
 }

@@ -2,15 +2,14 @@ package com.xinhnguyen.web.controller;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.xinhnguyen.web.interfaces.ControllerInterface;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/hotels")
-public class HotelController {
+public class HotelController implements ControllerInterface<Hotel> {
 
     private HotelService hotelService;
 
@@ -19,7 +18,39 @@ public class HotelController {
     }
 
     @GetMapping
-    public List<Hotel> getHotels() {
-        return this.hotelService.all();
+    @Override
+    public List<Hotel> all() {
+        return hotelService.all();
     }
+
+    @GetMapping("/{id}")
+    @Override
+    public Hotel one(@PathVariable Long id) {
+        return hotelService.one(id);
+    }
+
+    @PostMapping
+    @Override
+    public Long createOne(@RequestBody Hotel hotel) {
+        return hotelService.createOne(hotel);
+    }
+
+    @PutMapping("/{id}")
+    @Override
+    public void updateOne(@PathVariable Long id, @RequestBody Hotel hotel) {
+        hotelService.updateOne(id, hotel);
+    }
+
+    @DeleteMapping("/{id}")
+    @Override
+    public void deleteOne(@PathVariable Long id) {
+        hotelService.deleteOne(id);
+    }
+
+    @PatchMapping("/{id}")
+    @Override
+    public void deactivateOne(@PathVariable Long id) {
+        hotelService.deactivateOne(id);
+    }
+
 }
