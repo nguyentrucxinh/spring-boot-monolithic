@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public class Hotel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    @GeneratedValue
+    private Long id;
     private String name;
     private int classification;
     private boolean isOpen;
@@ -24,11 +24,11 @@ public class Hotel {
         this.isOpen = isOpen;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
