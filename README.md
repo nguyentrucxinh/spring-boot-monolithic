@@ -1,4 +1,6 @@
 # TODO:
+
+## SESSION 0: BASIC
 - [x] REST
 - [x] Service
 - [x] Repository
@@ -15,7 +17,7 @@
 - [ ] OAuth2
 - [ ] JWT
 
-# NEXT: 
+## SESSION 1: INTERMEDIATE
 - [ ] Cache
 - [ ] Session & Cookie
 - [ ] Multi-language
@@ -24,19 +26,25 @@
 - [ ] File storage
 - [ ] Mocking
 
-# 3RD PARTY:
+## SESSION 2: ADVANCE
+
+## SESSION 3: 3RD PARTY
 - [ ] Swagger
 - [ ] Hibernate
 - [ ] SLF4J (Simple Logging Facade for Java)
 
-# Run project
+---
+***
+___
+
+# RUN LOCALLY
 - Create database first
 - Dev: ```mvn spring-boot:run -Dspring.profiles.active=dev```
-- Prod: ```mvn spring-boot:run -Dspring.profiles.active=production```
+- Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
 
-# Update paren version maven
+# Maven: Manage version multiple module
+- Only update version child module depend on its parent (Recommended)
+```mvn -N versions:update-child-modules```
+
 - Update parent & child module
 ```mvn versions:set -DnewVersion=2.0-SNAPSHOT```
-
-- Only update version child module depend on its parent
-```mvn -N versions:update-child-modules```
