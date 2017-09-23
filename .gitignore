@@ -4,6 +4,7 @@ hotels.db.trace.db
 
 ### MAVEN ###
 **/.mvn
+**/pom.xml.versionsBackup
 
 ### GRADLE ###
 **/.gradle
