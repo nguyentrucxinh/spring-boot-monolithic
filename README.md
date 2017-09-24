@@ -2,21 +2,25 @@
 
 ## SESSION 0: BASIC
 - [x] REST
-- [x] Service
-- [x] Repository
-- [x] H2
-- [x] MySQL
+- [x] Service Layer
+- [x] Repository Layer
+- [x] H2 or HSQLDB (In-memory DB)
+- [x] MySQL (RDBMS)
 - [x] Migrations
 - [x] Seeding
-- [x] Manage version
-- [x] Spring profile
+- [x] Maven: Manage version modules
+- [x] Spring profile (dev & prod)
 - [x] Logging
 - [x] Paging
 - [x] Sorting
 - [x] Transaction
-- [ ] @ManyToOne, @ManyToMany, @OneToMany, @OneToOne
+- [ ] Association Mapping (Bidirectional & Unidirectional)
+  + @ManyToOne 
+  + @ManyToMany 
+  + @OneToMany 
+  + @OneToOne
 - [ ] JPA
-- [ ] MongoDB
+- [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT
@@ -31,11 +35,16 @@
 - [ ] Mocking
 
 ## SESSION 2: ADVANCE
+- [ ] DDD
 
 ## SESSION 3: 3RD PARTY
 - [ ] Swagger
 - [ ] Hibernate
 - [x] SLF4J (Simple Logging Facade for Java)
+- Lombok
+- Liquibase or Flyway
+- ModelMapper
+- JUnit
 
 ---
 ***
