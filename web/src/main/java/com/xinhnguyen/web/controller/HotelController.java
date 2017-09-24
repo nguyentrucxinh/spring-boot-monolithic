@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hotels")
-public class HotelController implements ControllerInterface<Hotel> {
+public class HotelController implements ControllerInterface<Hotel, Long> {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 //    private static Logger LOGGER = LoggerFactory.getLogger(HotelController.class);

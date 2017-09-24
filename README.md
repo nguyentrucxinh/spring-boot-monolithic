@@ -12,6 +12,8 @@
 - [x] Spring profile
 - [x] Logging
 - [ ] JPA
+- [ ] Paging
+- [ ] Sorting
 - [ ] MongoDB
 - [ ] HATEOAS
 - [ ] OAuth2
