@@ -5,6 +5,8 @@ import com.xinhnguyen.service.HotelService;
 import com.xinhnguyen.web.interfaces.ControllerInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.invoke.MethodHandles;
@@ -21,6 +23,12 @@ public class HotelController implements ControllerInterface<Hotel, Long> {
 
     public HotelController(HotelService hotelService) {
         this.hotelService = hotelService;
+    }
+
+    @GetMapping("/paging")
+    @Override
+    public Page<Hotel> all(Pageable pageable) {
+        return hotelService.all(pageable);
     }
 
     @GetMapping

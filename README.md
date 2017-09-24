@@ -11,9 +11,9 @@
 - [x] Manage version
 - [x] Spring profile
 - [x] Logging
+- [x] Paging
+- [x] Sorting
 - [ ] JPA
-- [ ] Paging
-- [ ] Sorting
 - [ ] MongoDB
 - [ ] HATEOAS
 - [ ] OAuth2
@@ -33,7 +33,7 @@
 ## SESSION 3: 3RD PARTY
 - [ ] Swagger
 - [ ] Hibernate
-- [ ] SLF4J (Simple Logging Facade for Java)
+- [x] SLF4J (Simple Logging Facade for Java)
 
 ---
 ***
