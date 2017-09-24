@@ -17,9 +17,5 @@ public class HotelRepositoryImp implements HotelRepositoryCustom {
 
     @PersistenceContext
     private EntityManager em;
-
-    @Override
-    public void customMethod() {
-        //em.createQuery(yourCriteria);
-    }
+    
 }
