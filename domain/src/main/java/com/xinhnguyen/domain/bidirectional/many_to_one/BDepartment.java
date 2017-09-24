@@ -1,9 +1,14 @@
-//package com.xinhnguyen.domain.bidirectional;
+//package com.xinhnguyen.domain.bidirectional.many_to_one;
 //
 //import javax.persistence.*;
 //import java.io.Serializable;
 //import java.util.List;
 //
+///**
+// * Bidirectional
+// * Single Valued Mappings
+// * Demo @ManyToOne
+// */
 //@Entity
 //public class BDepartment implements Serializable {
 //

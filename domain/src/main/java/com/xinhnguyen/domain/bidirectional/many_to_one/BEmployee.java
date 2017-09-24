@@ -1,12 +1,13 @@
-//package com.xinhnguyen.domain.bidirectional;
+//package com.xinhnguyen.domain.bidirectional.many_to_one;
 //
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.Id;
-//import javax.persistence.ManyToOne;
+//import javax.persistence.*;
 //import java.io.Serializable;
 //
+///**
+// * Bidirectional
+// * Single Valued Mappings
+// * Demo @ManyToOne
+// */
 //@Entity
 //public class BEmployee implements Serializable {
 //
