@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 /**
  * Unidirectional
+ * Single Valued Mappings
  * Demo @ManyToOne
  */
 @Entity
@@ -18,6 +19,7 @@ public class Employee implements Serializable {
     private String name;
 
     @ManyToOne
+    @JoinColumn(name="department_id")
     private Department department;
 
     public Employee() {

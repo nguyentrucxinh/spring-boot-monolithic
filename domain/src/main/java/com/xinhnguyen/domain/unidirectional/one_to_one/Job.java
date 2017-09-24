@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 /**
  * Unidirectional
+ * Single Valued Mappings
  * Demo @OneToOne
  */
 @Entity

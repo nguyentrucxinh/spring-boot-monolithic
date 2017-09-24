@@ -1,15 +1,15 @@
-package com.xinhnguyen.domain.unidirectional.many_to_one;
+package com.xinhnguyen.domain.unidirectional.many_to_many;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Unidirectional
- * Single Valued Mappings
- * Demo @ManyToOne
+ * Collection Valued Mappings
+ * Demo @ManyToMany
  */
 @Entity
-public class Department implements Serializable {
+public class Club implements Serializable {
 
     @Id
     @GeneratedValue
@@ -18,10 +18,10 @@ public class Department implements Serializable {
     @Column
     private String name;
 
-    public Department() {
+    public Club() {
     }
 
-    public Department(String name) {
+    public Club(String name) {
         this.name = name;
     }
 
