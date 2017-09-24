@@ -10,9 +10,9 @@
 - [x] Seeding
 - [x] Manage version
 - [x] Spring profile
+- [x] Logging
 - [ ] JPA
 - [ ] MongoDB
-- [ ] Logging
 - [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT

@@ -1,6 +1,7 @@
 **/target/
 hotels.db.mv.db
 hotels.db.trace.db
+**/logs
 
 ### MAVEN ###
 **/.mvn
