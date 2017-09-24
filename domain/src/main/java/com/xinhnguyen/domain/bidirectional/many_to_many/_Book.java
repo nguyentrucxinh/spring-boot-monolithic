@@ -1,15 +1,16 @@
-//package com.xinhnguyen.domain.bidirectional.one_to_one;
+//package com.xinhnguyen.domain.bidirectional.many_to_many;
 //
 //import javax.persistence.*;
 //import java.io.Serializable;
+//import java.util.List;
 //
 ///**
 // * Unidirectional
-// * Single Valued Mappings
-// * Demo @OneToOne
+// * Collection Valued Mappings
+// * Demo @OneToMany
 // */
 //@Entity
-//public class BPerson implements Serializable {
+//public class _Book implements Serializable {
 //
 //    @Id
 //    @GeneratedValue
@@ -18,15 +19,15 @@
 //    @Column
 //    private String name;
 //
-//    @OneToOne(mappedBy = "job")
-//    private BJob job;
+//    @OneToMany(mappedBy = "_book_mark")
+//    private List<_BookMark> bookMarks;
 //
-//    public BPerson() {
+//    public _Book() {
 //    }
 //
-//    public BPerson(String name, BJob job) {
+//    public _Book(String name, List<_BookMark> bookMarks) {
 //        this.name = name;
-//        this.job = job;
+//        this.bookMarks = bookMarks;
 //    }
 //
 //    public Long getId() {
@@ -45,11 +46,11 @@
 //        this.name = name;
 //    }
 //
-//    public BJob getJob() {
-//        return job;
+//    public List<_BookMark> getBookMarks() {
+//        return bookMarks;
 //    }
 //
-//    public void setJob(BJob job) {
-//        this.job = job;
+//    public void setBookMarks(List<_BookMark> bookMarks) {
+//        this.bookMarks = bookMarks;
 //    }
 //}

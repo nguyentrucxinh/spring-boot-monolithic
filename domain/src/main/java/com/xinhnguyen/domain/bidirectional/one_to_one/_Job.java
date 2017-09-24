@@ -9,7 +9,7 @@
 // * Demo @OneToOne
 // */
 //@Entity
-//public class BJob implements Serializable {
+//public class _Job implements Serializable {
 //
 //    @Id
 //    @GeneratedValue
@@ -18,11 +18,15 @@
 //    @Column
 //    private String name;
 //
-//    public BJob() {
+//    @OneToOne(mappedBy = "_job"/*, cascade = CascadeType.ALL, fetch = FetchType.LAZY*/)
+//    private _Person _person;
+//
+//    public _Job() {
 //    }
 //
-//    public BJob(String name) {
+//    public _Job(String name, _Person person) {
 //        this.name = name;
+//        this._person = person;
 //    }
 //
 //    public Long getId() {
@@ -39,5 +43,13 @@
 //
 //    public void setName(String name) {
 //        this.name = name;
+//    }
+//
+//    public _Person getPerson() {
+//        return _person;
+//    }
+//
+//    public void setPerson(_Person person) {
+//        this._person = person;
 //    }
 //}
