@@ -5,6 +5,7 @@ import com.xinhnguyen.service.HotelService;
 import com.xinhnguyen.web.interfaces.ControllerInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,8 @@ public class HotelController implements ControllerInterface<Hotel, Long> {
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 //    private static Logger LOGGER = LoggerFactory.getLogger(HotelController.class);
 
+    @Autowired
     private HotelService hotelService;
-
-    public HotelController(HotelService hotelService) {
-        this.hotelService = hotelService;
-    }
 
     @GetMapping("/paging")
     @Override

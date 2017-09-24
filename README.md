@@ -13,6 +13,7 @@
 - [x] Logging
 - [x] Paging
 - [x] Sorting
+- [ ] Transaction
 - [ ] JPA
 - [ ] MongoDB
 - [ ] HATEOAS
