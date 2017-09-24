@@ -13,7 +13,8 @@
 - [x] Logging
 - [x] Paging
 - [x] Sorting
-- [ ] Transaction
+- [x] Transaction
+- [ ] @ManyToOne, @ManyToMany, @OneToMany, @OneToOne
 - [ ] JPA
 - [ ] MongoDB
 - [ ] HATEOAS
@@ -40,12 +41,12 @@
 ***
 ___
 
-# RUN LOCALLY
+## RUN LOCALLY
 - Create database first
 - Dev: ```mvn spring-boot:run -Dspring.profiles.active=dev```
 - Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
 
-# Maven: Manage version multiple module
+## Maven: Manage version multiple module
 - Only update version child module depend on its parent (Recommended)
 ```mvn -N versions:update-child-modules```
 
