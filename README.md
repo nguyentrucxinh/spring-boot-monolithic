@@ -15,10 +15,12 @@
 - [x] Sorting
 - [x] Transaction
 - [ ] Association Mapping (Bidirectional & Unidirectional)
-  + @ManyToOne 
-  + @ManyToMany 
+  + @ManyToOne
+  + @ManyToMany
   + @OneToMany 
   + @OneToOne
+- [x] Annotation Validate
+- [x] YAML (yml)
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
@@ -26,6 +28,7 @@
 - [ ] JWT
 
 ## SESSION 1: INTERMEDIATE
+- [ ] Async
 - [ ] Cache
 - [ ] Session & Cookie
 - [ ] Multi-language

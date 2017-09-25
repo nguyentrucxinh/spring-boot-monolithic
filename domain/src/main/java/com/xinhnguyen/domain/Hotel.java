@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -13,7 +14,8 @@ public class Hotel implements Serializable {
     @GeneratedValue
     private Long id;
 
-    @Column
+    @Column(unique = true)
+    @NotNull
     private String name;
 
     @Column

@@ -1,0 +1,51 @@
+---
+spring:
+    profiles: prod
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://localhost:3306/db
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: validate
+
+---
+spring:
+    profiles: dev2
+    datasource:
+        url: jdbc:h2:file:./hotels.db
+---
+spring:
+    profiles: dev
+    output:
+        ansi:
+            enabled: DETECT
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: 123
+        url: jdbc:mysql://localhost:3306/spring-monolithic?createDatabaseIfNotExist=true
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+                format_sql: true
+                show_sql: true
+                use_sql_comments: true
+        show-sql: true
+
+logging:
+    level:
+        com:
+            xinhnguyen: DEBUG
+        org:
+            hibernate: ERROR
+            springframework:
+                web: ERROR
+    path: logs
+    pattern:
+        console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+        file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
