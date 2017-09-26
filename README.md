@@ -14,18 +14,28 @@
 - [x] Paging
 - [x] Sorting
 - [x] Transaction
-- [ ] Association Mapping (Bidirectional & Unidirectional)
+- [ ] Association Mapping
+  + [ ] Bidirectional
+  + [x] Unidirectional
   + @ManyToOne
   + @ManyToMany
   + @OneToMany 
   + @OneToOne
 - [x] Annotation Validate
 - [x] YAML (yml)
+- [ ] Create Base
+  + [x] BaseEntity
+  + [x] BaseRepositoryInterface
+  + [x] BaseServiceInterface
+  + [x] BaseControlllerInterface
+  + [ ] Helper
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT
+- [ ] Custom response data {status_code, message, data}
+- [ ] Live Reload
 
 ## SESSION 1: INTERMEDIATE
 - [ ] Async
@@ -36,6 +46,7 @@
 - [ ] Task scheduling
 - [ ] File storage
 - [ ] Mocking
+- [ ] Multiple database
 
 ## SESSION 2: ADVANCE
 - [ ] DDD
@@ -55,7 +66,8 @@ ___
 
 ## RUN LOCALLY
 - Create database first
-- Dev: ```mvn spring-boot:run -Dspring.profiles.active=dev```
+- Dev:  ```mvn spring-boot:run -Dspring.profiles.active=dev```
+- Dev2: ```mvn spring-boot:run -Dspring.profiles.active=dev2```
 - Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
 
 ## Maven: Manage version multiple module

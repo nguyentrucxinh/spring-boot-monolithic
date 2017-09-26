@@ -2,7 +2,6 @@ package com.xinhnguyen.web.controller;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
-import com.xinhnguyen.web.interfaces.ControllerInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/hotels")
-public class HotelController implements ControllerInterface<Hotel, Long> {
+public class HotelController implements BaseController<Hotel, Long> {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 //    private static Logger LOGGER = LoggerFactory.getLogger(HotelController.class);
