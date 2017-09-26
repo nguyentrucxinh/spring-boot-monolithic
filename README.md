@@ -4,7 +4,9 @@
 - [x] REST
 - [x] Service Layer
 - [x] Repository Layer
-- [x] H2 or HSQLDB (In-memory DB)
+- [ ] In-memory database
+  + [x] H2
+  + [ ] HSQLDB
 - [x] MySQL (RDBMS)
 - [x] Migrations
 - [x] Seeding
@@ -21,9 +23,9 @@
 - [x] YAML (yml)
 - [x] Create Base
   + BaseEntity
-  + BaseRepositoryInterface
-  + BaseServiceInterface
-  + BaseControlllerInterface
+  + BaseRepository
+  + BaseService
+  + BaseControlller
 - [x] Helper
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
@@ -48,13 +50,15 @@
 - [ ] DDD
 
 ## SESSION 3: 3RD PARTY
+- [x] SLF4J (Simple Logging Facade for Java)
 - [ ] Swagger
 - [ ] Hibernate
-- [x] SLF4J (Simple Logging Facade for Java)
-- Lombok
-- Liquibase or Flyway
-- ModelMapper
-- JUnit
+- [ ] Lombok
+- [ ] Higher-level database migration tool
+  + [ ] Liquibase
+  + [ ] Flyway
+- [ ] ModelMapper
+- [ ] JUnit
 
 ---
 ***
