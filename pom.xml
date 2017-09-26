@@ -11,7 +11,8 @@
 		<module>persistence</module>
 		<module>web</module>
 		<module>service</module>
-	</modules>
+        <module>helper</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>Spring monilithic</name>

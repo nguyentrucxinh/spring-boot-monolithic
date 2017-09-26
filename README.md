@@ -14,21 +14,17 @@
 - [x] Paging
 - [x] Sorting
 - [x] Transaction
-- [ ] Association Mapping
-  + [ ] Bidirectional
+- [ ] Association Mapping (@ManyToOne, @ManyToMany, @OneToMany, @OneToOne)
   + [x] Unidirectional
-  + @ManyToOne
-  + @ManyToMany
-  + @OneToMany 
-  + @OneToOne
+  + [ ] Bidirectional
 - [x] Annotation Validate
 - [x] YAML (yml)
-- [ ] Create Base
-  + [x] BaseEntity
-  + [x] BaseRepositoryInterface
-  + [x] BaseServiceInterface
-  + [x] BaseControlllerInterface
-  + [ ] Helper
+- [x] Create Base
+  + BaseEntity
+  + BaseRepositoryInterface
+  + BaseServiceInterface
+  + BaseControlllerInterface
+- [x] Helper
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
