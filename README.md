@@ -26,7 +26,7 @@
   + BaseRepository
   + BaseService
   + BaseControlller
-- [x] Helper
+- [x] Helper: Util & Bean
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
@@ -59,6 +59,9 @@
   + [ ] Flyway
 - [ ] ModelMapper
 - [ ] JUnit
+- [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
+- [ ] RabbitMQ (message broker)
+- [ ] LDAP (Lightweight Directory Access Protocol)
 
 ---
 ***
