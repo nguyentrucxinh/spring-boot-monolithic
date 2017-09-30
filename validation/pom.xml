@@ -12,4 +12,17 @@
     <artifactId>validation</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <artifactId>domain</artifactId>
+            <groupId>com.xinhnguyen</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>service</artifactId>
+            <groupId>com.xinhnguyen</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

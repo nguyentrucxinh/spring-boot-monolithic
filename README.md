@@ -45,6 +45,7 @@
 - [ ] File storage
 - [ ] Mocking
 - [ ] Multiple database
+- [ ] LDAP (Lightweight Directory Access Protocol)
 
 ## SESSION 2: ADVANCE
 - [ ] DDD
@@ -61,7 +62,6 @@
 - [ ] JUnit
 - [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
 - [ ] RabbitMQ (message broker)
-- [ ] LDAP (Lightweight Directory Access Protocol)
 
 ---
 ***
