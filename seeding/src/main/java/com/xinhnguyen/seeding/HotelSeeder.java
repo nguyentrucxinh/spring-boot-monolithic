@@ -1,7 +1,7 @@
-package com.xinhnguyen.persistence.seed;
+package com.xinhnguyen.seeding;
 
 import com.xinhnguyen.domain.Hotel;
-import com.xinhnguyen.persistence.repository.HotelRepository;
+import com.xinhnguyen.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class DbSeeder implements CommandLineRunner {
+public class HotelSeeder implements CommandLineRunner {
 
     @Autowired
     private HotelRepository hotelRepository;

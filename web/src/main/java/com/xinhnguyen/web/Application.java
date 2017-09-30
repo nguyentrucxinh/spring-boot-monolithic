@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = {"com.xinhnguyen.persistence"})
+@EnableJpaRepositories(basePackages = {"com.xinhnguyen.repository"})
 @EntityScan(basePackages = {"com.xinhnguyen.domain"})
-@ComponentScan(basePackages = {"com.xinhnguyen.persistence", "com.xinhnguyen.domain", "com.xinhnguyen.web", "com.xinhnguyen.service"})
+@ComponentScan(basePackages = {"com.xinhnguyen.domain", "com.xinhnguyen.repository", "com.xinhnguyen.seeding", "com.xinhnguyen.service", "com.xinhnguyen.web"})
 public class Application {
 
     public static void main(String[] args) {

@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
 
-    <artifactId>persistence</artifactId>
+    <artifactId>seeding</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -18,7 +18,11 @@
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <artifactId>repository</artifactId>
+            <groupId>com.xinhnguyen</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
-
 
 </project>

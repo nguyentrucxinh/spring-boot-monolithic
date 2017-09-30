@@ -1,8 +1,8 @@
-package com.xinhnguyen.persistence.repository.impl;
+package com.xinhnguyen.repository.impl;
 
 import com.xinhnguyen.domain.Hotel;
-import com.xinhnguyen.persistence.repository.HotelRepository;
-import com.xinhnguyen.persistence.repository.HotelRepositoryCustom;
+import com.xinhnguyen.repository.HotelRepository;
+import com.xinhnguyen.repository.HotelRepositoryCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;

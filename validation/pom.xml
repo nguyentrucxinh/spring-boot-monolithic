@@ -9,19 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service</artifactId>
-
-    <dependencies>
-        <dependency>
-            <artifactId>domain</artifactId>
-            <groupId>com.xinhnguyen</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <artifactId>repository</artifactId>
-            <groupId>com.xinhnguyen</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+    <artifactId>validation</artifactId>
+    <packaging>jar</packaging>
 
 </project>

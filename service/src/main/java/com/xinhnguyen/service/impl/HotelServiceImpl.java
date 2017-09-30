@@ -1,7 +1,7 @@
 package com.xinhnguyen.service.impl;
 
 import com.xinhnguyen.domain.Hotel;
-import com.xinhnguyen.persistence.repository.HotelRepository;
+import com.xinhnguyen.repository.HotelRepository;
 import com.xinhnguyen.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
