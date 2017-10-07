@@ -7,12 +7,9 @@
 	<artifactId>spring-monolithic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>helper</module>
 		<module>domain</module>
 		<module>repository</module>
-		<module>seeding</module>
 		<module>service</module>
-		<module>validation</module>
 		<module>dto</module>
 		<module>web</module>
     </modules>
