@@ -17,10 +17,10 @@ public class Permission implements Serializable {
     @ManyToMany(mappedBy = "permissions", cascade = CascadeType.ALL)
     private Set<User> users;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinTable(name = "role_permission"
             , joinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")}
-            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
+            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     private Role role;
 
     public Permission() {
