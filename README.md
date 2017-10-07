@@ -69,15 +69,19 @@
 ***
 ___
 
-## RUN LOCALLY
-- Create database first
-- Dev:  ```mvn spring-boot:run -Dspring.profiles.active=dev```
-- Dev2: ```mvn spring-boot:run -Dspring.profiles.active=dev2```
-- Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
-
 ## Maven: Manage version multiple module
 - Only update version child module depend on its parent (Recommended)
 ```mvn -N versions:update-child-modules```
 
 - Update parent & child module
 ```mvn versions:set -DnewVersion=2.0-SNAPSHOT```
+
+## RUN LOCALLY
+- Create database first
+- Dev:  ```mvn spring-boot:run```
+- Dev2: ```mvn spring-boot:run -Dspring.profiles.active=dev2```
+- Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
+
+## ACCESS LINK
+- Swagger:
+http://localhost:8080/swagger-ui.html
