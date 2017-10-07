@@ -1,16 +1,21 @@
-**/target/
+# Common file
 hotels.db.mv.db
 hotels.db.trace.db
+
+# Log file
 **/logs
 
-### MAVEN ###
+# Compiled class file
+**/target/
+
+# MAVEN
 **/.mvn
 **/pom.xml.versionsBackup
 
-### GRADLE ###
+# GRADLE
 **/.gradle
 
-### STS ###
+# STS
 **/.apt_generated
 **/.classpath
 **/.factorypath
@@ -18,16 +23,24 @@ hotels.db.trace.db
 **/.settings
 **/.springBeans
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 **/.idea
 **/*.iws
 **/*.iml
 **/*.ipr
 
-### NetBeans ###
+# NetBeans
 **/nbproject/private/
 **/build/
 **/nbbuild/
 **/dist/
 **/nbdist/
 **/.nb-gradle/
+
+# Package Files
+**.jar
+**.war
+**.ear
+**.zip
+**.tar.gz
+**.rar

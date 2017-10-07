@@ -53,6 +53,7 @@
 ## SESSION 3: 3RD PARTY
 - [x] SLF4J (Simple Logging Facade for Java)
 - [ ] Swagger
+- [ ] Jackson
 - [ ] Hibernate
 - [ ] Lombok
 - [ ] Higher-level database migration tool
@@ -62,6 +63,7 @@
 - [ ] JUnit
 - [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
 - [ ] RabbitMQ (message broker)
+- [ ] EhCache
 
 ---
 ***
