@@ -14,16 +14,23 @@ public class Permission implements Serializable {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "permissions")
+    @ManyToMany(mappedBy = "permissions", cascade = CascadeType.ALL)
     private Set<User> users;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "role_permission"
+            , joinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")}
+            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
+    private Role role;
 
     public Permission() {
     }
 
-    public Permission(Long id, String name, Set<User> users) {
+    public Permission(Long id, String name, Set<User> users, Role role) {
         this.id = id;
         this.name = name;
         this.users = users;
+        this.role = role;
     }
 
     public Long getId() {
@@ -48,5 +55,13 @@ public class Permission implements Serializable {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

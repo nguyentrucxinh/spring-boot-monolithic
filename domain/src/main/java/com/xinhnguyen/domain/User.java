@@ -17,13 +17,13 @@ public class User implements Serializable {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role"
             , joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}
-            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
+            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
     private Set<Role> roles;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_permission"
             , joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}
-            , inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")})
+            , inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
     private Set<Permission> permissions;
 
     public User() {
