@@ -13,6 +13,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- Preference project -->
         <dependency>
             <artifactId>domain</artifactId>
             <groupId>com.xinhnguyen</groupId>
@@ -27,6 +28,20 @@
             <artifactId>service</artifactId>
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

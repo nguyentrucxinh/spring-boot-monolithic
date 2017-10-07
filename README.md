@@ -52,7 +52,7 @@
 
 ## SESSION 3: 3RD PARTY
 - [x] SLF4J (Simple Logging Facade for Java)
-- [ ] Swagger
+- [x] Swagger
 - [ ] Jackson
 - [ ] Hibernate
 - [ ] Lombok
