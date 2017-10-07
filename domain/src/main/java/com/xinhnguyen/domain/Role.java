@@ -14,7 +14,7 @@ public class Role implements Serializable {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)

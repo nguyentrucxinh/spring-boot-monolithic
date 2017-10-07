@@ -14,16 +14,16 @@ public class User implements Serializable {
     @Column
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "user_role"
             , joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}
-            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
+            , inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     private Set<Role> roles;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "user_permission"
             , joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}
-            , inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id", insertable = false, updatable = false, nullable = false)})
+            , inverseJoinColumns = {@JoinColumn(name = "permission_id", referencedColumnName = "id")})
     private Set<Permission> permissions;
 
     public User() {

@@ -14,7 +14,7 @@ public class Permission implements Serializable {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "permissions", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "permissions")
     private Set<User> users;
 
     @ManyToOne
