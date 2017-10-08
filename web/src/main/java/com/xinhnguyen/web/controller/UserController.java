@@ -30,8 +30,8 @@ public class UserController implements BaseController<User, Long> {
 
     @GetMapping("/{id}")
     @Override
-    public User one(@PathVariable Long aLong) {
-        return userService.one(aLong);
+    public User one(@PathVariable Long id) {
+        return userService.one(id);
     }
 
     @PostMapping
@@ -42,19 +42,19 @@ public class UserController implements BaseController<User, Long> {
 
     @PutMapping("/{id}")
     @Override
-    public void updateOne(@PathVariable Long aLong, @RequestBody User user) {
-        userService.updateOne(aLong, user);
+    public void updateOne(@PathVariable Long id, @RequestBody User user) {
+        userService.updateOne(id, user);
     }
 
     @DeleteMapping("/{id}")
     @Override
-    public void deleteOne(@PathVariable Long aLong) {
-        userService.deleteOne(aLong);
+    public void deleteOne(@PathVariable Long id) {
+        userService.deleteOne(id);
     }
 
     @PatchMapping("/{id}")
     @Override
-    public void deactivateOne(@PathVariable Long aLong) {
+    public void deactivateOne(@PathVariable Long id) {
 
     }
 }

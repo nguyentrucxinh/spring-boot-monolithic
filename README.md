@@ -1,87 +1,44 @@
 # TODO:
 
-## SESSION 0: BASIC
-- [x] REST
-- [x] Service Layer
-- [x] Repository Layer
-- [ ] In-memory database
-  + [x] H2
-  + [ ] HSQLDB
-- [x] MySQL (RDBMS)
-- [x] Migrations
-- [x] Seeding
-- [x] Maven: Manage version modules
-- [x] Spring profile (dev & prod)
-- [x] Logging
-- [x] Paging
-- [x] Sorting
-- [x] Transaction
-- [ ] Association Mapping (@ManyToOne, @ManyToMany, @OneToMany, @OneToOne)
-  + [x] Unidirectional
-  + [ ] Bidirectional
-- [x] Annotation Validate
-- [x] YAML (yml)
-- [x] Create Base
-  + BaseEntity
-  + BaseRepository
-  + BaseService
-  + BaseControlller
-- [x] Helper: Util & Bean
-- [ ] JPA
-- [ ] MongoDB (NoSQL)
-- [ ] HATEOAS
-- [ ] OAuth2
-- [ ] JWT
-- [ ] Custom response data {status_code, message, data}
-- [ ] Live Reload
-
-## SESSION 1: INTERMEDIATE
-- [ ] Async
-- [ ] Cache
-- [ ] Session & Cookie
-- [ ] Multi-language
-- [ ] Mail
-- [ ] Task scheduling
-- [ ] File storage
-- [ ] Mocking
-- [ ] Multiple database
-- [ ] LDAP (Lightweight Directory Access Protocol)
-
-## SESSION 2: ADVANCE
-- [ ] DDD
-
-## SESSION 3: 3RD PARTY
-- [x] SLF4J (Simple Logging Facade for Java)
-- [x] Swagger
-- [ ] Jackson
-- [ ] Hibernate
-- [ ] Lombok
-- [ ] Higher-level database migration tool
-  + [ ] Liquibase
-  + [ ] Flyway
-- [ ] ModelMapper
-- [ ] JUnit
-- [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
-- [ ] RabbitMQ (message broker)
-- [ ] EhCache
+## [ ] @ManyToMany with @JoinTable (We just can use @JoinTable)
+  + User table is @Many
+  + Role table is @Many
+  
+  + Add role row is normal
+  + Add user row is also mandatory have exist role_id, also add user_role row
+  
+  + Update role row is normal
+  + Update user row is also mandatory have exist role_id, also update (delete all exist and add new row) user_role row
+  
+  + Delete role row is delete user_role use this role 
+  + Delete user row is delete user_role use this user
 
 ---
-***
-___
 
-## Maven: Manage version multiple module
-- Only update version child module depend on its parent (Recommended)
-```mvn -N versions:update-child-modules```
+## [ ] @ManyToOne & @OneToMany with @JoinTable (We can use @JoinColumns & @JoinTable)
+  + Role table is @One
+  + Permission table is @Many
+  
+  + Add role row is normal
+  + Add permission row is also mandatory have exist role_id, also add role_permission row
 
-- Update parent & child module
-```mvn versions:set -DnewVersion=2.0-SNAPSHOT```
+  + Update role row is normal
+  + Update permission is also mandatory have exist role_id, also update (delete all exist and add new row) role_permission row
 
-## RUN LOCALLY
-- Create database first
-- Dev:  ```mvn spring-boot:run```
-- Dev2: ```mvn spring-boot:run -Dspring.profiles.active=dev2```
-- Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
+  + Delete role row is also delete all permission use this role, also delete role_permission use this role
+  + Delete permission is normal
+ 
+---
 
-## ACCESS LINK
-- Swagger:
-http://localhost:8080/swagger-ui.html
+## [ ] @OneToOne with @JoinColumns (We can use @JoinColumns, @JoinTable & @PrimaryKeyJoinColumn)
+  + Person table is @One
+  + PersonDetail table is @One
+  
+  + Add person row is normal
+  + Add person_detail row is also mandatory have exist person_id
+  
+  + Update person row is normal
+  + Update person_detail is also mandatory have exist person_id
+  
+  + Delete person is also delete person_detail row
+  + Delete person_detail is normal

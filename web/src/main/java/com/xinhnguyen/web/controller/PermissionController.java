@@ -30,8 +30,8 @@ public class PermissionController implements BaseController<Permission, Long> {
 
     @GetMapping("/{id}")
     @Override
-    public Permission one(@PathVariable Long aLong) {
-        return permissionService.one(aLong);
+    public Permission one(@PathVariable Long id) {
+        return permissionService.one(id);
     }
 
     @PostMapping
@@ -42,19 +42,19 @@ public class PermissionController implements BaseController<Permission, Long> {
 
     @PutMapping("/{id}")
     @Override
-    public void updateOne(@PathVariable Long aLong, @RequestBody Permission permission) {
-        permissionService.updateOne(aLong, permission);
+    public void updateOne(@PathVariable Long id, @RequestBody Permission permission) {
+        permissionService.updateOne(id, permission);
     }
 
     @DeleteMapping("/{id}")
     @Override
-    public void deleteOne(@PathVariable Long aLong) {
-        permissionService.deleteOne(aLong);
+    public void deleteOne(@PathVariable Long id) {
+        permissionService.deleteOne(id);
     }
 
     @PatchMapping("/{id}")
     @Override
-    public void deactivateOne(@PathVariable Long aLong) {
+    public void deactivateOne(@PathVariable Long id) {
 
     }
 }

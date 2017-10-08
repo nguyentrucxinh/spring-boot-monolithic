@@ -30,8 +30,8 @@ public class RoleController implements BaseController<Role, Long> {
 
     @GetMapping("/{id}")
     @Override
-    public Role one(@PathVariable Long aLong) {
-        return roleService.one(aLong);
+    public Role one(@PathVariable Long id) {
+        return roleService.one(id);
     }
 
     @PostMapping
@@ -42,19 +42,19 @@ public class RoleController implements BaseController<Role, Long> {
 
     @PutMapping("/{id}")
     @Override
-    public void updateOne(@PathVariable Long aLong, @RequestBody Role role) {
-        roleService.updateOne(aLong, role);
+    public void updateOne(@PathVariable Long id, @RequestBody Role role) {
+        roleService.updateOne(id, role);
     }
 
     @DeleteMapping("/{id}")
     @Override
-    public void deleteOne(@PathVariable Long aLong) {
-        roleService.deleteOne(aLong);
+    public void deleteOne(@PathVariable Long id) {
+        roleService.deleteOne(id);
     }
 
     @PatchMapping("/{id}")
     @Override
-    public void deactivateOne(@PathVariable Long aLong) {
+    public void deactivateOne(@PathVariable Long id) {
 
     }
 }
