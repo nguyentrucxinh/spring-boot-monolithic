@@ -40,6 +40,7 @@ public class PermissionServiceImpl implements PermissionService {
     public void updateOne(Long aLong, Permission permission) {
         Permission found = permissionRepository.findOne(aLong);
         found.setName(permission.getName());
+        found.setRole(permission.getRole());
         permissionRepository.save(found);
     }
 

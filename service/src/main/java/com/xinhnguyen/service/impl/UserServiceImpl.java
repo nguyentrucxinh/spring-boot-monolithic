@@ -40,6 +40,8 @@ public class UserServiceImpl implements UserService {
     public void updateOne(Long aLong, User user) {
         User found = userRepository.findOne(aLong);
         found.setName(user.getName());
+        found.setPermissions(user.getPermissions());
+        found.setRoles(user.getRoles());
         userRepository.save(found);
     }
 
