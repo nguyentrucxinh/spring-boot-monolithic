@@ -67,4 +67,14 @@ public class User implements Serializable {
     public void setPermissions(Set<Permission> permissions) {
         this.permissions = permissions;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", roles=" + roles +
+                ", permissions=" + permissions +
+                '}';
+    }
 }
