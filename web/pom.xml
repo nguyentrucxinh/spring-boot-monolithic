@@ -15,19 +15,28 @@
     <dependencies>
         <!-- Preference project -->
         <dependency>
-            <artifactId>domain</artifactId>
-            <groupId>com.xinhnguyen</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <artifactId>seeding</artifactId>
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>
+            <!-- //TODO: Apply when use DTO -->
+            <!--<exclusions>-->
+            <!--<exclusion>-->
+            <!--<groupId>com.xinhnguyen</groupId>-->
+            <!--<artifactId>domain</artifactId>-->
+            <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
         <dependency>
             <artifactId>service</artifactId>
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>
+            <!-- //TODO: Apply when use DTO -->
+            <!--<exclusions>-->
+            <!--<exclusion>-->
+            <!--<groupId>com.xinhnguyen</groupId>-->
+            <!--<artifactId>domain</artifactId>-->
+            <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
 
         <!-- Swagger -->

@@ -13,6 +13,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- Preference project -->
         <dependency>
             <artifactId>domain</artifactId>
             <groupId>com.xinhnguyen</groupId>

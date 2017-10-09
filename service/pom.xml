@@ -12,11 +12,7 @@
     <artifactId>service</artifactId>
 
     <dependencies>
-        <dependency>
-            <artifactId>domain</artifactId>
-            <groupId>com.xinhnguyen</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        <!-- Preference project -->
         <dependency>
             <artifactId>repository</artifactId>
             <groupId>com.xinhnguyen</groupId>
@@ -24,6 +20,11 @@
         </dependency>
         <dependency>
             <artifactId>validation</artifactId>
+            <groupId>com.xinhnguyen</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>dto</artifactId>
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
