@@ -9,6 +9,8 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -28,6 +30,12 @@ public class HotelController implements BaseController<Hotel, Long> {
 
     @Autowired
     private HotelService hotelService;
+
+    @Autowired
+    private Environment env;
+
+    @Value("${user.lastname}")
+    private String lastname;
 
     @ApiOperation(value = "View a list of paging hotels", response = Hotel.class)
     @GetMapping("/paging")
@@ -87,5 +95,11 @@ public class HotelController implements BaseController<Hotel, Long> {
     @GetMapping("/exception")
     public void exception() {
         throw new CustomNotFoundException("Not found custom with name is ...");
+    }
+
+    @ApiOperation(value = "Get a value from application.properties")
+    @GetMapping("/env")
+    public String env() {
+        return env.getProperty("user.firstname") + " " + lastname;
     }
 }
