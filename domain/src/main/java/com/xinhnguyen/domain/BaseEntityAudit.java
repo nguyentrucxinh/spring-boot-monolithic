@@ -1,13 +1,8 @@
 package com.xinhnguyen.domain;
 
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @MappedSuperclass
 public abstract class BaseEntityAudit extends BaseEntity {

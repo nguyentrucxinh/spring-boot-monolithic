@@ -1,6 +1,9 @@
 package com.xinhnguyen.domain.unidirectional.one_to_many;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**

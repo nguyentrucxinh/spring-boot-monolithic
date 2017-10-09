@@ -19,7 +19,7 @@ public class Employee implements Serializable {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="department_id")
+    @JoinColumn(name = "department_id")
     private Department department;
 
     public Employee() {
