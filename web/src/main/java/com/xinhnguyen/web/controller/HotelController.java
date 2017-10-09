@@ -2,6 +2,7 @@ package com.xinhnguyen.web.controller;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
+import com.xinhnguyen.web.exception.CustomNotFoundException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -79,4 +80,9 @@ public class HotelController implements BaseController<Hotel, Long> {
         hotelService.deactivateOne(id);
     }
 
+    @ApiOperation(value = "Get an exception")
+    @GetMapping("/exception")
+    public void exception() {
+        throw new CustomNotFoundException("Not found custom with name is ...");
+    }
 }
