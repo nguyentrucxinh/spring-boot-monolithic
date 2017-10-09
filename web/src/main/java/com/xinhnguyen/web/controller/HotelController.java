@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.invoke.MethodHandles;
@@ -29,7 +30,7 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "View a list of paging hotels", response = Hotel.class)
     @GetMapping("/paging")
     @Override
-    public Page<Hotel> all(Pageable pageable) {
+    public Page<Hotel> all(@PageableDefault(size = 2, page = 1, sort = "name") Pageable pageable) {
         return hotelService.all(pageable);
     }
 
