@@ -20,6 +20,7 @@ public class Role implements Serializable {
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Permission> permissions;
 
