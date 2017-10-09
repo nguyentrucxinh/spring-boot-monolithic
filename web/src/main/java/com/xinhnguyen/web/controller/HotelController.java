@@ -2,6 +2,7 @@ package com.xinhnguyen.web.controller;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
+import com.xinhnguyen.web.annotation.HotelRestController;
 import com.xinhnguyen.web.exception.CustomNotFoundException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,8 +18,9 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 @Api(value = "/api/hotels", description = "Operations about hotels")
-@RestController
-@RequestMapping("/api/hotels")
+//@RestController
+//@RequestMapping("/api/hotels")
+@HotelRestController
 public class HotelController implements BaseController<Hotel, Long> {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
