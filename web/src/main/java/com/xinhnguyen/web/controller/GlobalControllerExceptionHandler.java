@@ -101,7 +101,7 @@ public class GlobalControllerExceptionHandler {
      */
     @ExceptionHandler(value = {DTOInControllerNotValidException.class})
     public ResponseEntity<List<ErrorMsg>> handleDTOBindingResultNotValidException(DTOInControllerNotValidException ex) {
-        return new ResponseEntity<>(ExceptionUtil.convertBindingResultToListErrorMessage(ex.getBindingResult()), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(ExceptionUtil.convertBindingResultToListErrorMsg(ex.getBindingResult()), HttpStatus.BAD_REQUEST);
     }
 
     /**
