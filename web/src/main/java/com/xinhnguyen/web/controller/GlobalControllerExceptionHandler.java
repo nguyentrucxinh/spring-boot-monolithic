@@ -3,8 +3,8 @@ package com.xinhnguyen.web.controller;
 import com.xinhnguyen.web.bean.ErrorMsg;
 import com.xinhnguyen.web.bean.ResponseMsg;
 import com.xinhnguyen.web.exception.CustomNotFoundException;
-import com.xinhnguyen.web.exception.DTOBindingResultNotValidException;
-import com.xinhnguyen.web.exception.DTOErrorMessageNotValidException;
+import com.xinhnguyen.web.exception.DTOInControllerNotValidException;
+import com.xinhnguyen.web.exception.DTOInServiceNotValidException;
 import com.xinhnguyen.web.util.ExceptionUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,8 +64,8 @@ public class GlobalControllerExceptionHandler {
      * @param ex an exception
      * @return List ErrorMsg & HttpStatus
      */
-    @ExceptionHandler(value = {DTOBindingResultNotValidException.class})
-    public ResponseEntity<List<ErrorMsg>> handleDTOBindingResultNotValidException(DTOBindingResultNotValidException ex) {
+    @ExceptionHandler(value = {DTOInControllerNotValidException.class})
+    public ResponseEntity<List<ErrorMsg>> handleDTOBindingResultNotValidException(DTOInControllerNotValidException ex) {
         return new ResponseEntity<>(ExceptionUtil.convertBindingResultToListErrorMessage(ex.getBindingResult()), HttpStatus.BAD_REQUEST);
     }
 
@@ -75,8 +75,8 @@ public class GlobalControllerExceptionHandler {
      * @param ex an exception
      * @return List ErrorMsg & HttpStatus
      */
-    @ExceptionHandler(value = DTOErrorMessageNotValidException.class)
-    public ResponseEntity<List<ErrorMsg>> handleDTOErrorMessageNotValidException(DTOErrorMessageNotValidException ex) {
+    @ExceptionHandler(value = DTOInServiceNotValidException.class)
+    public ResponseEntity<List<ErrorMsg>> handleDTOErrorMessageNotValidException(DTOInServiceNotValidException ex) {
         return new ResponseEntity<>(ex.getErrorMsgs(), HttpStatus.BAD_REQUEST);
     }
 }

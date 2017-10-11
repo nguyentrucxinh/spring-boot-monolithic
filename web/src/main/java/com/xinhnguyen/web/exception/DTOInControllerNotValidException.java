@@ -3,16 +3,16 @@ package com.xinhnguyen.web.exception;
 import org.springframework.validation.BindingResult;
 
 @SuppressWarnings("serial")
-public class DTOBindingResultNotValidException extends RuntimeException {
+public class DTOInControllerNotValidException extends RuntimeException {
 
     private final BindingResult bindingResult;
 
     /**
-     * Constructor for {@link DTOBindingResultNotValidException}.
+     * Constructor for {@link DTOInControllerNotValidException}.
      *
      * @param bindingResult the results of the validation
      */
-    public DTOBindingResultNotValidException(BindingResult bindingResult) {
+    public DTOInControllerNotValidException(BindingResult bindingResult) {
         this.bindingResult = bindingResult;
     }
 
