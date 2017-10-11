@@ -19,38 +19,33 @@ public class HotelServiceImpl implements HotelService {
     private HotelRepository hotelRepository;
 
     @Override
-    public Page<Hotel> all(Pageable pageable) {
+    public Page<Hotel> findAll(Pageable pageable) {
         return hotelRepository.findAll(pageable);
     }
 
     @Override
-    public List<Hotel> all() {
+    public List<Hotel> findAll() {
         return hotelRepository.findAll();
     }
 
     @Override
-    public Hotel one(Long id) {
+    public Hotel findById(Long id) {
         return hotelRepository.findOne(id);
     }
 
     @Override
-    public Long createOne(Hotel hotel) {
+    public Long create(Hotel hotel) {
         return hotelRepository.save(hotel).getId();
     }
 
     @Override
-    public void updateOne(Long id, Hotel hotel) {
+    public void update(Long id, Hotel hotel) {
         hotel.setId(id);
         hotelRepository.save(hotel);
     }
 
     @Override
-    public void deleteOne(Long id) {
+    public void deleteById(Long id) {
         hotelRepository.delete(hotelRepository.findOne(id));
-    }
-
-    @Override
-    public void deactivateOne(Long id) {
-
     }
 }

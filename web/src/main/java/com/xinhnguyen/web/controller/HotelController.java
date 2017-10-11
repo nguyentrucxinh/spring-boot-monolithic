@@ -40,55 +40,48 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "View a list of paging hotels", response = Hotel.class)
     @GetMapping("/paging")
     @Override
-    public Page<Hotel> all(@PageableDefault(size = 2, page = 1, sort = "name") Pageable pageable) {
-        return hotelService.all(pageable);
+    public Page<Hotel> findAll(@PageableDefault(size = 2, page = 1, sort = "name") Pageable pageable) {
+        return hotelService.findAll(pageable);
     }
 
     @ApiOperation(value = "View a list of hotels", response = Hotel.class)
     @GetMapping
     @Override
-    public List<Hotel> all() {
+    public List<Hotel> findAll() {
         LOGGER.debug("Debug log message");
         LOGGER.info("Info log message");
         LOGGER.error("Error log message");
         LOGGER.warn("Warn log message");
         LOGGER.trace("Trace log message");
-        return hotelService.all();
+        return hotelService.findAll();
     }
 
     @ApiOperation(value = "Find a hotel by ID", response = Hotel.class)
     @GetMapping("/{id}")
     @Override
-    public Hotel one(@PathVariable Long id) {
-        return hotelService.one(id);
+    public Hotel findById(@PathVariable Long id) {
+        return hotelService.findById(id);
     }
 
     @ApiOperation(value = "Add a new hotel", response = Long.class)
     @PostMapping
     @Override
-    public Long createOne(@RequestBody Hotel hotel) {
-        return hotelService.createOne(hotel);
+    public Long create(@RequestBody Hotel hotel) {
+        return hotelService.create(hotel);
     }
 
     @ApiOperation(value = "Update a existing hotel")
     @PutMapping("/{id}")
     @Override
-    public void updateOne(@PathVariable Long id, @RequestBody Hotel hotel) {
-        hotelService.updateOne(id, hotel);
+    public void update(@PathVariable Long id, @RequestBody Hotel hotel) {
+        hotelService.update(id, hotel);
     }
 
     @ApiOperation(value = "Delete a hotel")
     @DeleteMapping("/{id}")
     @Override
-    public void deleteOne(@PathVariable Long id) {
-        hotelService.deleteOne(id);
-    }
-
-    @ApiOperation(value = "Deactivate a hotel")
-    @PatchMapping("/{id}")
-    @Override
-    public void deactivateOne(@PathVariable Long id) {
-        hotelService.deactivateOne(id);
+    public void deleteById(@PathVariable Long id) {
+        hotelService.deleteById(id);
     }
 
     @ApiOperation(value = "Get an exception")

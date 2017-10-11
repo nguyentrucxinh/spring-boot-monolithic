@@ -6,19 +6,58 @@ import org.springframework.data.domain.Pageable;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Defines all base behaviors for {@code RESTFUL web service} operations
+ *
+ * @param <T>  the entity
+ * @param <ID> the primary key
+ * @author Xinh Nguyen
+ */
 public interface BaseController<T, ID extends Serializable> {
 
-    Page<T> all(Pageable pageable);
+    /**
+     * Find all entity with pagination
+     *
+     * @param pageable the pagination
+     * @return the list entity
+     */
+    Page<T> findAll(Pageable pageable);
 
-    List<T> all();
+    /**
+     * Find all entity
+     *
+     * @return the list entity
+     */
+    List<T> findAll();
 
-    T one(ID id);
+    /**
+     * Find an entity by the primary key
+     *
+     * @param id the primary key
+     * @return an entity
+     */
+    T findById(ID id);
 
-    Long createOne(T t);
+    /**
+     * Create a new entity
+     *
+     * @param t the entity should be created
+     * @return a primary key
+     */
+    ID create(T t);
 
-    void updateOne(ID id, T t);
+    /**
+     * Update an entity
+     *
+     * @param id the primary key
+     * @param t  the entity should be updated
+     */
+    void update(ID id, T t);
 
-    void deleteOne(ID id);
-
-    void deactivateOne(ID id);
+    /**
+     * Delete an entity
+     *
+     * @param id the primary key
+     */
+    void deleteById(ID id);
 }
