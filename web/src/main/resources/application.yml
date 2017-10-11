@@ -7,7 +7,7 @@ spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         password: root
-        url: jdbc:mysql://localhost:3306/db
+        url: jdbc:mysql://localhost/db?useSSL=false
         username: root
     jpa:
         hibernate:
@@ -27,11 +27,13 @@ spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         password: 123
-        url: jdbc:mysql://localhost:3306/spring-monolithic?createDatabaseIfNotExist=true
+        url: jdbc:mysql://localhost/spring-monolithic?createDatabaseIfNotExist=true
         username: root
     jpa:
         hibernate:
             ddl-auto: create-drop
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5Dialect
