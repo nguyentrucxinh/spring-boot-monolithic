@@ -1,0 +1,19 @@
+HotelController:
+  findAllPaging:
+    title: List all of paging hotels
+    notes: Retrieves a Paging Collection of hotel objects
+  findAll:
+    title: List all of hotels
+    notes: Retrieves a Collection of hotel objects
+  findById:
+    title: Find a hotel by id
+    notes: Retrieves a hotel object
+  create:
+    title: Add a new hotel
+    notes: Creates a hotel object
+  update:
+    title: Update an exist hotel
+    notes: Updates a hotel object
+  delete:
+    title: Delete an exist hotel
+    notes: Deletes a hotel object

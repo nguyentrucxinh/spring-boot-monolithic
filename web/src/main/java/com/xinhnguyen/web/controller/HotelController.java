@@ -4,7 +4,6 @@ import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
 import com.xinhnguyen.web.annotation.HotelRestController;
 import com.xinhnguyen.web.exception.CustomNotFoundException;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
-@Api(value = "/api/hotels", description = "Operations about hotels")
 //@RestController
 //@RequestMapping("/api/hotels")
 @HotelRestController
@@ -37,14 +35,14 @@ public class HotelController implements BaseController<Hotel, Long> {
     @Value("${user.lastname}")
     private String lastname;
 
-    @ApiOperation(value = "View a list of paging hotels", response = Hotel.class)
+    @ApiOperation(value = "${HotelController.findAllPaging.title}", notes = "${HotelController.findAllPaging.notes}")
     @GetMapping("/paging")
     @Override
     public Page<Hotel> findAll(@PageableDefault(size = 2, page = 1, sort = "name") Pageable pageable) {
         return hotelService.findAll(pageable);
     }
 
-    @ApiOperation(value = "View a list of hotels", response = Hotel.class)
+    @ApiOperation(value = "${HotelController.findAll.title}", notes = "${HotelController.findAll.notes}")
     @GetMapping
     @Override
     public List<Hotel> findAll() {
@@ -56,28 +54,28 @@ public class HotelController implements BaseController<Hotel, Long> {
         return hotelService.findAll();
     }
 
-    @ApiOperation(value = "Find a hotel by ID", response = Hotel.class)
+    @ApiOperation(value = "${HotelController.findById.title}", notes = "${HotelController.findById.notes}")
     @GetMapping("/{id}")
     @Override
     public Hotel findById(@PathVariable Long id) {
         return hotelService.findById(id);
     }
 
-    @ApiOperation(value = "Add a new hotel", response = Long.class)
+    @ApiOperation(value = "${HotelController.create.title}", notes = "${HotelController.create.notes}")
     @PostMapping
     @Override
     public Long create(@RequestBody Hotel hotel) {
         return hotelService.create(hotel);
     }
 
-    @ApiOperation(value = "Update a existing hotel")
+    @ApiOperation(value = "${HotelController.update.title}", notes = "${HotelController.update.notes}")
     @PutMapping("/{id}")
     @Override
     public void update(@PathVariable Long id, @RequestBody Hotel hotel) {
         hotelService.update(id, hotel);
     }
 
-    @ApiOperation(value = "Delete a hotel")
+    @ApiOperation(value = "${HotelController.delete.title}", notes = "${HotelController.delete.notes}")
     @DeleteMapping("/{id}")
     @Override
     public void deleteById(@PathVariable Long id) {

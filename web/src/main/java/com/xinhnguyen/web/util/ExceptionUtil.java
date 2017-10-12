@@ -38,10 +38,23 @@ public class ExceptionUtil {
      * @param ex an exception
      * @return the {@link List<ErrorMsg>}
      */
-    public static List<ErrorMsg> convertConstraintViolationExceptionToListErrorMessage(
+    public static List<ErrorMsg> convertConstraintViolationExceptionToListErrorMsg(
             ConstraintViolationException ex) {
         List<ErrorMsg> errorMessages = new ArrayList<>();
         ex.getConstraintViolations().forEach(constraintViolation -> errorMessages.add(new ErrorMsg("", constraintViolation.getMessage())));
+        return errorMessages;
+    }
+
+    /**
+     * Convert to {@link List<ErrorMsg>}
+     *
+     * @param name    an exception
+     * @param message an exception
+     * @return the {@link List<ErrorMsg>}
+     */
+    public static List<ErrorMsg> convertToListErrorMessage(String name, String message) {
+        List<ErrorMsg> errorMessages = new ArrayList<>();
+        errorMessages.add(new ErrorMsg(name, message));
         return errorMessages;
     }
 }
