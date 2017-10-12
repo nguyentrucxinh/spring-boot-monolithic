@@ -1,11 +1,11 @@
 package com.xinhnguyen.web.api;
 
-import com.xinhnguyen.web.bean.ErrorMsg;
-import com.xinhnguyen.web.bean.ResponseMsg;
-import com.xinhnguyen.web.exception.CustomNotFoundException;
-import com.xinhnguyen.web.exception.DTOInControllerNotValidException;
-import com.xinhnguyen.web.exception.DTOInServiceNotValidException;
-import com.xinhnguyen.web.util.ExceptionUtil;
+import com.xinhnguyen.helper.bean.ErrorMsg;
+import com.xinhnguyen.helper.bean.ResponseMsg;
+import com.xinhnguyen.helper.exception.CustomNotFoundException;
+import com.xinhnguyen.helper.exception.DTOInControllerNotValidException;
+import com.xinhnguyen.helper.exception.DTOInServiceNotValidException;
+import com.xinhnguyen.helper.util.ExceptionUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

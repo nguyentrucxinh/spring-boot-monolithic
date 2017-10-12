@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.constant;
+package com.xinhnguyen.helper.constant;
 
 /**
  * Defines constant values for MySQL.

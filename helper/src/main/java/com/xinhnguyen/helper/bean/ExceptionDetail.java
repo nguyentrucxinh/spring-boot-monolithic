@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.bean;
+package com.xinhnguyen.helper.bean;
 
 /**
  * The ExceptionDetail class models information about a web service request which results in an Exception. This

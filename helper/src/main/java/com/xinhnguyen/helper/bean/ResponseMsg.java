@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.bean;
+package com.xinhnguyen.helper.bean;
 
 public class ResponseMsg<T> {
 

@@ -2,7 +2,7 @@ package com.xinhnguyen.web.api;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
-import com.xinhnguyen.web.exception.CustomNotFoundException;
+import com.xinhnguyen.helper.exception.CustomNotFoundException;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

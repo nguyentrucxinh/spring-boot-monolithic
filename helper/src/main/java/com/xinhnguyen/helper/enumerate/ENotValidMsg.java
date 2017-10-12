@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.enumerate;
+package com.xinhnguyen.helper.enumerate;
 
 public enum ENotValidMsg {
 

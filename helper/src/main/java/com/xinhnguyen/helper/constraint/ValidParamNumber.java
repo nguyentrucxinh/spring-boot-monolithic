@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.constraint;
+package com.xinhnguyen.helper.constraint;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

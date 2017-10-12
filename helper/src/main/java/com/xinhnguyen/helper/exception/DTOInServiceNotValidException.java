@@ -1,6 +1,6 @@
-package com.xinhnguyen.web.exception;
+package com.xinhnguyen.helper.exception;
 
-import com.xinhnguyen.web.bean.ErrorMsg;
+import com.xinhnguyen.helper.bean.ErrorMsg;
 
 import java.util.List;
 

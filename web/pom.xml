@@ -15,6 +15,11 @@
     <dependencies>
         <!-- Preference project -->
         <dependency>
+            <artifactId>helper</artifactId>
+            <groupId>com.xinhnguyen</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <artifactId>seeding</artifactId>
             <groupId>com.xinhnguyen</groupId>
             <version>0.0.1-SNAPSHOT</version>

@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.bean;
+package com.xinhnguyen.helper.bean;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.context.request.ServletWebRequest;

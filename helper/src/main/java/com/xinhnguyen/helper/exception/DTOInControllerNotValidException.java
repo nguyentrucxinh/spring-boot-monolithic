@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.exception;
+package com.xinhnguyen.helper.exception;
 
 import org.springframework.validation.BindingResult;
 

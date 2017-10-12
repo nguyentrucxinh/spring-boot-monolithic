@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.exception;
+package com.xinhnguyen.helper.exception;
 
 public class CustomNotFoundException extends RuntimeException {
 

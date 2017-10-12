@@ -1,6 +1,6 @@
-package com.xinhnguyen.web.util;
+package com.xinhnguyen.helper.util;
 
-import com.xinhnguyen.web.bean.ErrorMsg;
+import com.xinhnguyen.helper.bean.ErrorMsg;
 import org.springframework.validation.BindingResult;
 
 import javax.validation.ConstraintViolationException;
