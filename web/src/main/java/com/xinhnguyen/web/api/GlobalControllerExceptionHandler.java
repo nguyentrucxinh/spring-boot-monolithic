@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.controller;
+package com.xinhnguyen.web.api;
 
 import com.xinhnguyen.web.bean.ErrorMsg;
 import com.xinhnguyen.web.bean.ResponseMsg;

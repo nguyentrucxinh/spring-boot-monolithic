@@ -80,7 +80,6 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.xinhnguyen.web.controller"))
                 .paths(paths::test)
                 .build();
         // @formatter:on

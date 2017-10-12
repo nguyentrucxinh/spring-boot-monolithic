@@ -1,8 +1,7 @@
-package com.xinhnguyen.web.controller;
+package com.xinhnguyen.web.api;
 
 import com.xinhnguyen.domain.Hotel;
 import com.xinhnguyen.service.HotelService;
-import com.xinhnguyen.web.annotation.HotelRestController;
 import com.xinhnguyen.web.exception.CustomNotFoundException;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -18,9 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
-//@RestController
-//@RequestMapping("/api/hotels")
-@HotelRestController
+@RestController
+@RequestMapping("/api/hotels")
 public class HotelController implements BaseController<Hotel, Long> {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

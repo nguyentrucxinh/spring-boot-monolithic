@@ -1,4 +1,4 @@
-package com.xinhnguyen.web.controller;
+package com.xinhnguyen.web.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
