@@ -1,5 +1,6 @@
 package com.xinhnguyen.web.docs;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @author Xinh Nguyen
  */
+@Profile("docs")
 @Controller
 public class ApiDocsController {
 
