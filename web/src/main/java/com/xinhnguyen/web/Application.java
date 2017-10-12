@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"com.xinhnguyen.domain", "com.xinhnguyen.repository", "com.xinhnguyen.seeding", "com.xinhnguyen.service", "com.xinhnguyen.web"})
 public class Application {
 
-    public static void main(String... args) {
+    public static void main(final String... args) {
         SpringApplication springApplication = new SpringApplication();
 
         springApplication.setAdditionalProfiles("dev");
