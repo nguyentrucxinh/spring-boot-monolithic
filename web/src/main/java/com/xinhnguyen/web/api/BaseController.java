@@ -2,6 +2,7 @@ package com.xinhnguyen.web.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.validation.BindingResult;
 
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +45,7 @@ public interface BaseController<T, ID extends Serializable> {
      * @param t the entity should be created
      * @return a primary key
      */
-    ID create(T t);
+    ID create(T t, BindingResult bindingResult);
 
     /**
      * Update an entity
@@ -52,7 +53,7 @@ public interface BaseController<T, ID extends Serializable> {
      * @param id the primary key
      * @param t  the entity should be updated
      */
-    void update(ID id, T t);
+    void update(ID id, T t, BindingResult bindingResult);
 
     /**
      * Delete an entity

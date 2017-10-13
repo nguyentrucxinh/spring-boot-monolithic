@@ -15,9 +15,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class Application {
 
     public static void main(final String... args) {
-        SpringApplication springApplication = new SpringApplication();
-
-        springApplication.setAdditionalProfiles("dev");
         SpringApplication.run(Application.class, args);
     }
 }
