@@ -1,8 +1,9 @@
 package com.xinhnguyen.web.api;
 
+import com.xinhnguyen.helper.exception.DTOInControllerNotValidException;
+import com.xinhnguyen.helper.exception.DTOInServiceNotValidException;
 import com.xinhnguyen.helper.response.ExceptionDetail;
 import com.xinhnguyen.helper.response.ExceptionDetailBuilder;
-import com.xinhnguyen.helper.exception.DTOInControllerNotValidException;
 import com.xinhnguyen.helper.util.ExceptionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.persistence.NoResultException;
+import javax.validation.ConstraintViolationException;
 
 /**
  * Controller for global/generic exception handling
@@ -80,20 +82,58 @@ public class GlobalControllerExceptionHandler extends ResponseEntityExceptionHan
     }
 
     /*
-    * ConstraintViolationException
     * MethodArgumentNotValidException
     * NullPointerException
     * NoHandlerFoundException
     * CustomNotFoundException
-    * DTOInControllerNotValidException
-    * DTOInServiceNotValidException
     * */
 
+    /**
+     * Handles {@link ConstraintViolationException}
+     *
+     * @param ex      An Exception instance.
+     * @param request the {@link WebRequest}
+     * @return A ResponseEntity containing a the Exception attributes
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Object> handleConstraintViolationException(final ConstraintViolationException ex, final WebRequest request) {
+        logger.info("> handleException");
+        logger.error("- Exception: ", ex);
+        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtil.convertConstraintViolationExceptionToListErrorMsg(ex))
+                .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR).webRequest(request).build();
+        logger.info("< handleException");
+        return handleExceptionInternal(ex, detail, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+    }
+
+    /**
+     * Handles {@link DTOInControllerNotValidException}
+     *
+     * @param ex      An Exception instance.
+     * @param request the {@link WebRequest}
+     * @return A ResponseEntity containing a the Exception attributes
+     */
     @ExceptionHandler(DTOInControllerNotValidException.class)
     public ResponseEntity<Object> handleDTOInControllerNotValidException(final DTOInControllerNotValidException ex, final WebRequest request) {
         logger.info("> handleException");
         logger.error("- Exception: ", ex);
         final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtil.convertBindingResultToListErrorMsg(ex.getBindingResult()))
+                .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR).webRequest(request).build();
+        logger.info("< handleException");
+        return handleExceptionInternal(ex, detail, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+    }
+
+    /**
+     * Handles {@link DTOInServiceNotValidException}
+     *
+     * @param ex      An Exception instance.
+     * @param request the {@link WebRequest}
+     * @return A ResponseEntity containing a the Exception attributes
+     */
+    @ExceptionHandler(DTOInServiceNotValidException.class)
+    public ResponseEntity<Object> handleDTOInServiceNotValidException(final DTOInServiceNotValidException ex, final WebRequest request) {
+        logger.info("> handleException");
+        logger.error("- Exception: ", ex);
+        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ex.getErrorMsgs())
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR).webRequest(request).build();
         logger.info("< handleException");
         return handleExceptionInternal(ex, detail, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
