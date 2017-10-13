@@ -1,8 +1,9 @@
 package com.xinhnguyen.web.api;
 
 import com.xinhnguyen.domain.Hotel;
-import com.xinhnguyen.service.HotelService;
 import com.xinhnguyen.helper.exception.CustomNotFoundException;
+import com.xinhnguyen.helper.exception.DTOInControllerNotValidException;
+import com.xinhnguyen.service.HotelService;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.invoke.MethodHandles;
@@ -62,14 +64,18 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "${HotelController.create.title}", notes = "${HotelController.create.notes}")
     @PostMapping
     @Override
-    public Long create(@RequestBody Hotel hotel) {
+    public Long create(@RequestBody Hotel hotel, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
+            throw new DTOInControllerNotValidException(bindingResult);
         return hotelService.create(hotel);
     }
 
     @ApiOperation(value = "${HotelController.update.title}", notes = "${HotelController.update.notes}")
     @PutMapping("/{id}")
     @Override
-    public void update(@PathVariable Long id, @RequestBody Hotel hotel) {
+    public void update(@PathVariable Long id, @RequestBody Hotel hotel, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
+            throw new DTOInControllerNotValidException(bindingResult);
         hotelService.update(id, hotel);
     }
 
