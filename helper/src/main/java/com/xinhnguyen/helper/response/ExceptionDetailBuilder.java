@@ -1,10 +1,11 @@
-package com.xinhnguyen.helper.bean;
+package com.xinhnguyen.helper.response;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * A builder for ExceptionDetail objects. This class facilitates the construction and population of ExceptionDetail
@@ -46,6 +47,20 @@ public class ExceptionDetailBuilder {
         if (ex != null) {
             exceptionDetail.setExceptionClass(ex.getClass().getName());
             exceptionDetail.setExceptionMessage(ex.getMessage());
+        }
+        return this;
+    }
+
+    /**
+     * Populate the ExceptionDetail attributes with information from the List<ExceptionDetailMessage>. Returns this ExceptionDetailBuilder
+     * to chain method invocations.
+     *
+     * @param exceptionDetailMessages An List<ExceptionDetailMessage>
+     * @return This ExceptionDetailBuilder object.
+     */
+    public ExceptionDetailBuilder exceptionDetail(final List<ExceptionDetailMessage> exceptionDetailMessages) {
+        if (!exceptionDetailMessages.isEmpty()) {
+            exceptionDetail.setExceptionMessageDetail(exceptionDetailMessages);
         }
         return this;
     }

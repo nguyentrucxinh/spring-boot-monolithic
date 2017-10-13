@@ -1,4 +1,7 @@
-package com.xinhnguyen.helper.bean;
+package com.xinhnguyen.helper.response;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * The ExceptionDetail class models information about a web service request which results in an Exception. This
@@ -36,6 +39,10 @@ public class ExceptionDetail {
      * The value of the Exception message attribute.
      */
     private String exceptionMessage = "";
+    /**
+     * The detail value of the Exception message attribute.
+     */
+    private List<ExceptionDetailMessage> exceptionMessageDetail = Collections.emptyList();
 
     /**
      * Construct an ExceptionDetail.
@@ -168,6 +175,24 @@ public class ExceptionDetail {
      */
     public void setExceptionMessage(final String exceptionMessage) {
         this.exceptionMessage = exceptionMessage;
+    }
+
+    /**
+     * Returns the exceptionMessageDetail attribute value.
+     *
+     * @return A List<ExceptionDetailMessage>.
+     */
+    public List<ExceptionDetailMessage> getExceptionMessageDetail() {
+        return exceptionMessageDetail;
+    }
+
+    /**
+     * Sets the exceptionMessageDetail attribute value.
+     *
+     * @param exceptionMessageDetail A List<ExceptionDetailMessage>.
+     */
+    public void setExceptionMessageDetail(final List<ExceptionDetailMessage> exceptionMessageDetail) {
+        this.exceptionMessageDetail = exceptionMessageDetail;
     }
 
 }

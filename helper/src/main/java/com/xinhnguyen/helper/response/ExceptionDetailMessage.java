@@ -1,14 +1,14 @@
-package com.xinhnguyen.helper.bean;
+package com.xinhnguyen.helper.response;
 
-public class ErrorMsg {
+public class ExceptionDetailMessage {
 
     private String field;
     private String message;
 
-    public ErrorMsg() {
+    public ExceptionDetailMessage() {
     }
 
-    public ErrorMsg(String field, String message) {
+    public ExceptionDetailMessage(String field, String message) {
         this.field = field;
         this.message = message;
     }

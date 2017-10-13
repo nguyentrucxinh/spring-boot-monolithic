@@ -1,15 +1,15 @@
-package com.xinhnguyen.helper.bean;
+package com.xinhnguyen.helper.response;
 
-public class ResponseMsg<T> {
+public class SuccessDetail<T> {
 
     private int status_code;
     private String message;
     private T data;
 
-    public ResponseMsg() {
+    public SuccessDetail() {
     }
 
-    public ResponseMsg(int status_code, String message, T data) {
+    public SuccessDetail(int status_code, String message, T data) {
         this.status_code = status_code;
         this.message = message;
         this.data = data;

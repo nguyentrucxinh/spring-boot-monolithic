@@ -1,6 +1,6 @@
 package com.xinhnguyen.helper.util;
 
-import com.xinhnguyen.helper.bean.ErrorMsg;
+import com.xinhnguyen.helper.response.ExceptionDetailMessage;
 import org.springframework.validation.BindingResult;
 
 import javax.validation.ConstraintViolationException;
@@ -18,43 +18,43 @@ public class ExceptionUtil {
     }
 
     /**
-     * Convert {@link BindingResult} to {@link List<ErrorMsg>}
+     * Convert {@link BindingResult} to {@link List< ExceptionDetailMessage >}
      *
      * @param bindingResult an exception
-     * @return the {@link List<ErrorMsg>}
+     * @return the {@link List< ExceptionDetailMessage >}
      */
-    public static List<ErrorMsg> convertBindingResultToListErrorMsg(
+    public static List<ExceptionDetailMessage> convertBindingResultToListErrorMsg(
             BindingResult bindingResult) {
-        List<ErrorMsg> errorMessages = new ArrayList<>();
+        List<ExceptionDetailMessage> errorMessages = new ArrayList<>();
         bindingResult.getFieldErrors().forEach(fieldError ->
-                errorMessages.add(new ErrorMsg(fieldError.getField(), fieldError.getDefaultMessage()))
+                errorMessages.add(new ExceptionDetailMessage(fieldError.getField(), fieldError.getDefaultMessage()))
         );
         return errorMessages;
     }
 
     /**
-     * Convert {@link ConstraintViolationException} to {@link List<ErrorMsg>}
+     * Convert {@link ConstraintViolationException} to {@link List< ExceptionDetailMessage >}
      *
      * @param ex an exception
-     * @return the {@link List<ErrorMsg>}
+     * @return the {@link List< ExceptionDetailMessage >}
      */
-    public static List<ErrorMsg> convertConstraintViolationExceptionToListErrorMsg(
+    public static List<ExceptionDetailMessage> convertConstraintViolationExceptionToListErrorMsg(
             ConstraintViolationException ex) {
-        List<ErrorMsg> errorMessages = new ArrayList<>();
-        ex.getConstraintViolations().forEach(constraintViolation -> errorMessages.add(new ErrorMsg("", constraintViolation.getMessage())));
+        List<ExceptionDetailMessage> errorMessages = new ArrayList<>();
+        ex.getConstraintViolations().forEach(constraintViolation -> errorMessages.add(new ExceptionDetailMessage("", constraintViolation.getMessage())));
         return errorMessages;
     }
 
     /**
-     * Convert to {@link List<ErrorMsg>}
+     * Convert to {@link List< ExceptionDetailMessage >}
      *
      * @param name    an exception
      * @param message an exception
-     * @return the {@link List<ErrorMsg>}
+     * @return the {@link List< ExceptionDetailMessage >}
      */
-    public static List<ErrorMsg> convertToListErrorMessage(String name, String message) {
-        List<ErrorMsg> errorMessages = new ArrayList<>();
-        errorMessages.add(new ErrorMsg(name, message));
+    public static List<ExceptionDetailMessage> convertToListErrorMessage(String name, String message) {
+        List<ExceptionDetailMessage> errorMessages = new ArrayList<>();
+        errorMessages.add(new ExceptionDetailMessage(name, message));
         return errorMessages;
     }
 }

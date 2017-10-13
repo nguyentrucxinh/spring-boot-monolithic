@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.invoke.MethodHandles;
@@ -64,7 +65,7 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "${HotelController.create.title}", notes = "${HotelController.create.notes}")
     @PostMapping
     @Override
-    public Long create(@RequestBody Hotel hotel, BindingResult bindingResult) {
+    public Long create(@Validated @RequestBody Hotel hotel, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
         return hotelService.create(hotel);
@@ -73,7 +74,7 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "${HotelController.update.title}", notes = "${HotelController.update.notes}")
     @PutMapping("/{id}")
     @Override
-    public void update(@PathVariable Long id, @RequestBody Hotel hotel, BindingResult bindingResult) {
+    public void update(@PathVariable Long id, @Validated @RequestBody Hotel hotel, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
         hotelService.update(id, hotel);

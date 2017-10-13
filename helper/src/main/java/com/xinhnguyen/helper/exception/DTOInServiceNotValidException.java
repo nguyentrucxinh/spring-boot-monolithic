@@ -1,27 +1,27 @@
 package com.xinhnguyen.helper.exception;
 
-import com.xinhnguyen.helper.bean.ErrorMsg;
+import com.xinhnguyen.helper.response.ExceptionDetailMessage;
 
 import java.util.List;
 
 @SuppressWarnings("serial")
 public class DTOInServiceNotValidException extends RuntimeException {
 
-    private final List<ErrorMsg> errorMsgs;
+    private final List<ExceptionDetailMessage> errorMsgs;
 
     /**
      * Constructor for {@link DTOInServiceNotValidException}.
      *
      * @param errorMsgs the results of the validation
      */
-    public DTOInServiceNotValidException(List<ErrorMsg> errorMsgs) {
+    public DTOInServiceNotValidException(List<ExceptionDetailMessage> errorMsgs) {
         this.errorMsgs = errorMsgs;
     }
 
     /**
      * Return the results of the failed validation.
      */
-    public List<ErrorMsg> getErrorMsgs() {
+    public List<ExceptionDetailMessage> getErrorMsgs() {
         return errorMsgs;
     }
 }
