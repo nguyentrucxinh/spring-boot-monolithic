@@ -18,10 +18,10 @@ public class ExceptionUtil {
     }
 
     /**
-     * Convert {@link BindingResult} to {@link List< ExceptionDetailMessage >}
+     * Convert {@link BindingResult} to list {@link ExceptionDetailMessage}
      *
      * @param bindingResult an exception
-     * @return the {@link List< ExceptionDetailMessage >}
+     * @return the list {@link ExceptionDetailMessage}
      */
     public static List<ExceptionDetailMessage> convertBindingResultToListErrorMsg(
             BindingResult bindingResult) {
@@ -33,10 +33,10 @@ public class ExceptionUtil {
     }
 
     /**
-     * Convert {@link ConstraintViolationException} to {@link List< ExceptionDetailMessage >}
+     * Convert {@link ConstraintViolationException} to list {@link ExceptionDetailMessage}
      *
      * @param ex an exception
-     * @return the {@link List< ExceptionDetailMessage >}
+     * @return the list {@link ExceptionDetailMessage}
      */
     public static List<ExceptionDetailMessage> convertConstraintViolationExceptionToListErrorMsg(
             ConstraintViolationException ex) {
@@ -46,11 +46,11 @@ public class ExceptionUtil {
     }
 
     /**
-     * Convert to {@link List< ExceptionDetailMessage >}
+     * Convert to list {@link ExceptionDetailMessage}
      *
      * @param name    an exception
      * @param message an exception
-     * @return the {@link List< ExceptionDetailMessage >}
+     * @return the list {@link ExceptionDetailMessage}
      */
     public static List<ExceptionDetailMessage> convertToListErrorMessage(String name, String message) {
         List<ExceptionDetailMessage> errorMessages = new ArrayList<>();
