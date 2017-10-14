@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xinhnguyen</groupId>
+    <groupId>com.github.nguyentrucxinh</groupId>
     <artifactId>spring-monolithic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
@@ -13,7 +13,6 @@
         <module>repository</module>
         <module>seeding</module>
         <module>service</module>
-        <module>validation</module>
         <module>dto</module>
         <module>web</module>
     </modules>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-monolithic</artifactId>
-        <groupId>com.xinhnguyen</groupId>
+        <groupId>com.github.nguyentrucxinh</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -16,29 +16,29 @@
         <!-- Preference project -->
         <dependency>
             <artifactId>helper</artifactId>
-            <groupId>com.xinhnguyen</groupId>
+            <groupId>com.github.nguyentrucxinh</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <artifactId>seeding</artifactId>
-            <groupId>com.xinhnguyen</groupId>
+            <groupId>com.github.nguyentrucxinh</groupId>
             <version>0.0.1-SNAPSHOT</version>
             <!-- //TODO: Apply when use DTO -->
             <!--<exclusions>-->
             <!--<exclusion>-->
-            <!--<groupId>com.xinhnguyen</groupId>-->
+            <!--<groupId>com.github.nguyentrucxinh</groupId>-->
             <!--<artifactId>domain</artifactId>-->
             <!--</exclusion>-->
             <!--</exclusions>-->
         </dependency>
         <dependency>
             <artifactId>service</artifactId>
-            <groupId>com.xinhnguyen</groupId>
+            <groupId>com.github.nguyentrucxinh</groupId>
             <version>0.0.1-SNAPSHOT</version>
             <!-- //TODO: Apply when use DTO -->
             <!--<exclusions>-->
             <!--<exclusion>-->
-            <!--<groupId>com.xinhnguyen</groupId>-->
+            <!--<groupId>com.github.nguyentrucxinh</groupId>-->
             <!--<artifactId>domain</artifactId>-->
             <!--</exclusion>-->
             <!--</exclusions>-->

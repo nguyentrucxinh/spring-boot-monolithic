@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-monolithic</artifactId>
-        <groupId>com.xinhnguyen</groupId>
+        <groupId>com.github.nguyentrucxinh</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -15,17 +15,12 @@
         <!-- Preference project -->
         <dependency>
             <artifactId>repository</artifactId>
-            <groupId>com.xinhnguyen</groupId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <artifactId>validation</artifactId>
-            <groupId>com.xinhnguyen</groupId>
+            <groupId>com.github.nguyentrucxinh</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <artifactId>dto</artifactId>
-            <groupId>com.xinhnguyen</groupId>
+            <groupId>com.github.nguyentrucxinh</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
