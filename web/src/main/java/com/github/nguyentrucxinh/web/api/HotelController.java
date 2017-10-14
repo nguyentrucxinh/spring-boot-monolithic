@@ -101,6 +101,10 @@ public class HotelController implements BaseController<Hotel, Long> {
         return env.getProperty("user.firstname") + " " + lastname;
     }
 
+    /*
+     * Customize our JSON request at the API level.
+     */
+
     @PostMapping("/public")
     public Hotel postPublicView(@JsonView(Views.Public.class) @RequestBody Hotel hotel) {
         return hotel;
@@ -110,6 +114,10 @@ public class HotelController implements BaseController<Hotel, Long> {
     public Hotel postInternalView(@JsonView(Views.Internal.class) @RequestBody Hotel hotel) {
         return hotel;
     }
+
+    /*
+     * customize our JSON response at the API level.
+     */
 
     @JsonView(Views.Public.class)
     @GetMapping("/public")
