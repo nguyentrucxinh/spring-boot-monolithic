@@ -1,6 +1,6 @@
 package com.xinhnguyen.helper.enumerate;
 
-public enum ENotValidMsg {
+public enum MessageEnum {
 
     EXIST("Existed"),
 
@@ -10,7 +10,7 @@ public enum ENotValidMsg {
 
     private final String message;
 
-    ENotValidMsg(String message) {
+    MessageEnum(String message) {
         this.message = message;
     }
 
