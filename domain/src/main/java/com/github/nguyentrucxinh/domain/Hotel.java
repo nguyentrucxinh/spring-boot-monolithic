@@ -1,5 +1,8 @@
 package com.github.nguyentrucxinh.domain;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.github.nguyentrucxinh.helper.util.Views;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,27 +13,31 @@ import java.io.Serializable;
 @Entity
 public class Hotel implements Serializable {
 
+    @JsonView(Views.Public.class)
     @Id
     @GeneratedValue
     private Long id;
 
+    @JsonView(Views.Public.class)
     @Column(unique = true)
     @NotNull
     private String name;
 
+    @JsonView(Views.Internal.class)
     @Column
     private Integer classification;
 
+    @JsonView(Views.Internal.class)
     @Column
-    private Boolean isOpen;
+    private boolean open;
 
     public Hotel() {
     }
 
-    public Hotel(String name, int classification, boolean isOpen) {
+    public Hotel(String name, int classification, boolean open) {
         this.name = name;
         this.classification = classification;
-        this.isOpen = isOpen;
+        this.open = open;
     }
 
     public Long getId() {
@@ -57,11 +64,11 @@ public class Hotel implements Serializable {
         this.classification = classification;
     }
 
-    public Boolean getOpen() {
-        return isOpen;
+    public boolean isOpen() {
+        return open;
     }
 
-    public void setOpen(Boolean open) {
-        isOpen = open;
+    public void setOpen(boolean open) {
+        this.open = open;
     }
 }

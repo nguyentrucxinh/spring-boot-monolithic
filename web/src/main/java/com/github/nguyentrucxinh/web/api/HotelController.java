@@ -1,8 +1,10 @@
 package com.github.nguyentrucxinh.web.api;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.github.nguyentrucxinh.domain.Hotel;
 import com.github.nguyentrucxinh.helper.exception.CustomNotFoundException;
 import com.github.nguyentrucxinh.helper.exception.DTOInControllerNotValidException;
+import com.github.nguyentrucxinh.helper.util.Views;
 import com.github.nguyentrucxinh.service.HotelService;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -97,5 +99,15 @@ public class HotelController implements BaseController<Hotel, Long> {
     @GetMapping("/env")
     public String env() {
         return env.getProperty("user.firstname") + " " + lastname;
+    }
+
+    @PostMapping("/public")
+    public Hotel postPublicView(@JsonView(Views.Public.class) @RequestBody Hotel hotel) {
+        return hotel;
+    }
+
+    @PostMapping("/internal")
+    public Hotel postInternalView(@JsonView(Views.Internal.class) @RequestBody Hotel hotel) {
+        return hotel;
     }
 }
