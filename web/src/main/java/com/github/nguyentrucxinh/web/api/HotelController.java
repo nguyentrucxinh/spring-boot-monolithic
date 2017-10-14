@@ -110,4 +110,16 @@ public class HotelController implements BaseController<Hotel, Long> {
     public Hotel postInternalView(@JsonView(Views.Internal.class) @RequestBody Hotel hotel) {
         return hotel;
     }
+
+    @JsonView(Views.Public.class)
+    @GetMapping("/public")
+    public Hotel postPublicView() {
+        return hotelService.findById(1L);
+    }
+
+    @JsonView(Views.Internal.class)
+    @GetMapping("/internal")
+    public Hotel postInternalView() {
+        return hotelService.findById(1L);
+    }
 }
