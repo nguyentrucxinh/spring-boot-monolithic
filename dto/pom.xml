@@ -12,4 +12,13 @@
     <artifactId>dto</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <!-- Preference project -->
+        <dependency>
+            <groupId>com.github.nguyentrucxinh</groupId>
+            <artifactId>helper</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

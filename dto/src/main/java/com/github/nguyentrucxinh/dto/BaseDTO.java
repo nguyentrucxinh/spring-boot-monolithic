@@ -1,9 +1,8 @@
 package com.github.nguyentrucxinh.dto;
 
-/**
- * Created by xinhnguyen on 05/10/2017.
- */
-public class BaseDTO {
+import java.io.Serializable;
+
+public class BaseDTO implements Serializable {
 
     public interface validateOnCreate {
     }
