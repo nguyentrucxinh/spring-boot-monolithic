@@ -25,7 +25,7 @@
   + BaseEntity
   + BaseRepository
   + BaseService
-  + BaseControlller
+  + BaseController
 - [x] Helper: Util & Bean
 - [ ] JPA
 - [ ] MongoDB (NoSQL)
@@ -45,7 +45,6 @@
 - [ ] File storage
 - [ ] Mocking
 - [ ] Multiple database
-- [ ] LDAP (Lightweight Directory Access Protocol)
 
 ## SESSION 2: ADVANCE
 - [ ] DDD
@@ -61,9 +60,11 @@
   + [ ] Flyway
 - [ ] ModelMapper
 - [ ] JUnit
-- [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
 - [ ] RabbitMQ (message broker)
 - [ ] EhCache
+- [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
+- [ ] LDAP (Lightweight Directory Access Protocol)
+- [ ] Elasticsearch
 
 ---
 ***
@@ -84,4 +85,5 @@ ___
 
 ## ACCESS LINK
 - Swagger:
+http://localhost:8080/docs
 http://localhost:8080/swagger-ui.html
