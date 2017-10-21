@@ -71,4 +71,7 @@ public class Hotel implements Serializable {
     public void setOpen(boolean open) {
         this.open = open;
     }
+
+    // Use for password
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 }

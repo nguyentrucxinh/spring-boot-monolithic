@@ -6,7 +6,10 @@ import com.github.nguyentrucxinh.helper.exception.CustomNotFoundException;
 import com.github.nguyentrucxinh.helper.exception.DTOInControllerNotValidException;
 import com.github.nguyentrucxinh.helper.util.Views;
 import com.github.nguyentrucxinh.service.HotelService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -129,5 +133,26 @@ public class HotelController implements BaseController<Hotel, Long> {
     @GetMapping("/internal")
     public Hotel postInternalView() {
         return hotelService.findById(1L);
+    }
+
+    @GetMapping("/sample-response-entity")
+    public ResponseEntity sampleResponseEntity() {
+        // return ResponseEntity.badRequest().body(null);
+        return ResponseEntity.ok(null);
+    }
+
+    @ApiOperation(value = "${HotelController.sampleSwagger.title}", notes = "${HotelController.sampleSwagger.notes}")
+    @ApiImplicitParams(@ApiImplicitParam(name = "X-Authorization",
+            value = "Basic auth_credentials",
+            required = true,
+            dataType = "string",
+            paramType = "header"))
+    @GetMapping("/sample-swagger/{companyId}")
+    public ResponseEntity<Page<Hotel>> sampleSwagger(
+            @ApiParam(value = "The primary key of Company") @PathVariable Long companyId, Pageable pageable) {
+        return null;
+
+//        Ignore properties model in api docs
+//        @ApiModelProperty(hidden = true)
     }
 }
