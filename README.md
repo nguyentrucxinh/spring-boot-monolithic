@@ -87,3 +87,6 @@ ___
 - Swagger:
 http://localhost:8080/docs
 http://localhost:8080/swagger-ui.html
+- Actuator:
+http://localhost:8080/health
+http://localhost:8080/info
