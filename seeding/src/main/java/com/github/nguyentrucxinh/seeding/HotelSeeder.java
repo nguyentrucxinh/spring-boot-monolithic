@@ -17,12 +17,21 @@ public class HotelSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        Hotel marriot = new Hotel("Marriot", 5, true);
-        Hotel bis = new Hotel("Ibis", 3, false);
-        Hotel goldenTulip = new Hotel("Golden Tulip", 4, true);
+        Hotel mario = new Hotel();
+        mario.setName("Mario");
+        mario.setClassification(5);
+        mario.setOpen(true);
+        Hotel bis = new Hotel();
+        bis.setName("Ibis");
+        bis.setClassification(3);
+        bis.setOpen(false);
+        Hotel goldenTulip = new Hotel();
+        goldenTulip.setName("Golden Tulip");
+        goldenTulip.setClassification(4);
+        goldenTulip.setOpen(true);
 
         List<Hotel> hotels = new ArrayList<>();
-        hotels.add(marriot);
+        hotels.add(mario);
         hotels.add(bis);
         hotels.add(goldenTulip);
 

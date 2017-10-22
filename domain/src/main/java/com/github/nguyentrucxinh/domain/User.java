@@ -30,5 +30,4 @@ public class User extends BaseEntityAudit {
     @Column
     private String lastName;
 
-
 }

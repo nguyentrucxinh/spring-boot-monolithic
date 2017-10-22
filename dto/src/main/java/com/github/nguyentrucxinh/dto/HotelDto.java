@@ -1,9 +1,11 @@
 package com.github.nguyentrucxinh.dto;
 
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
+import lombok.Data;
 
-public class HotelDto extends BaseDto implements Serializable {
+import javax.validation.constraints.NotNull;
+
+@Data
+public class HotelDto extends BaseDto {
 
     private Long id;
 
@@ -14,39 +16,5 @@ public class HotelDto extends BaseDto implements Serializable {
 
     private boolean open;
 
-    public HotelDto() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getClassification() {
-        return classification;
-    }
-
-    public void setClassification(Integer classification) {
-        this.classification = classification;
-    }
-
-    public boolean isOpen() {
-        return open;
-    }
-
-    public void setOpen(boolean open) {
-        this.open = open;
-    }
 }
 
