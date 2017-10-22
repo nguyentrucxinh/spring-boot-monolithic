@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,15 +17,16 @@ public class UserController implements BaseController<UserDTO, Long> {
     @Autowired
     private UserService userService;
 
-    @GetMapping
+    @GetMapping("/paging")
     @Override
     public Page<UserDTO> findAll(Pageable pageable) {
         return userService.findAll(pageable);
     }
 
+    @GetMapping
     @Override
     public List<UserDTO> findAll() {
-        return null;
+        return userService.findAll();
     }
 
     @GetMapping("/{id}")
@@ -37,18 +35,21 @@ public class UserController implements BaseController<UserDTO, Long> {
         return userService.findById(id);
     }
 
+    @PostMapping
     @Override
     public Long create(UserDTO userDTO, BindingResult bindingResult) {
-        return null;
+        return userService.create(userDTO);
     }
 
+    @PutMapping("/{id}")
     @Override
     public void update(Long id, UserDTO userDTO, BindingResult bindingResult) {
-
+        userService.update(id, userDTO);
     }
 
+    @DeleteMapping("/{id}")
     @Override
     public void deleteById(Long id) {
-
+        userService.deleteById(id);
     }
 }

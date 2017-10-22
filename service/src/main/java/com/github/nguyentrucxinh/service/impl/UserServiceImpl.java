@@ -2,19 +2,17 @@ package com.github.nguyentrucxinh.service.impl;
 
 import com.github.nguyentrucxinh.domain.User;
 import com.github.nguyentrucxinh.dto.UserDTO;
+import com.github.nguyentrucxinh.helper.util.ModelMapperUtils;
 import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
-import com.github.nguyentrucxinh.service.mapper.UserMapper;
 import com.github.nguyentrucxinh.service.validation.UserValidation;
-import org.springframework.beans.BeanUtils;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,35 +26,30 @@ public class UserServiceImpl implements UserService {
     private UserValidation userValidation;
 
     @Autowired
-    private UserMapper userMapper;
+    private ModelMapper modelMapper;
+
 
     @Override
     public Page<UserDTO> findAll(Pageable pageable) {
         Page<User> users = userRepository.findAll(pageable);
-
-        List<UserDTO> userDTOS = new ArrayList<>();
-        BeanUtils.copyProperties(users.getContent(), userDTOS);
-
-        return new PageImpl<>(userDTOS, pageable, users.getTotalElements());
+        return modelMapper.map(users, ModelMapperUtils.pageType(UserDTO.class));
     }
 
     @Override
     public List<UserDTO> findAll() {
         List<User> users = userRepository.findAll();
-        return userMapper.usersToUserDTOs(users);
+        return modelMapper.map(users, ModelMapperUtils.listType(UserDTO.class));
     }
 
     @Override
     public UserDTO findById(Long id) {
         User user = userRepository.findOne(id);
-        UserDTO userDTO = new UserDTO();
-        BeanUtils.copyProperties(user, userDTO);
-        return userMapper.userToUserDTO(user);
+        return modelMapper.map(user, UserDTO.class);
     }
 
     @Override
     public Long create(UserDTO userDTO) {
-        User user = userMapper.userDTOToUser(userDTO);
+        User user = modelMapper.map(userDTO, User.class);
         return userRepository.save(user).getId();
     }
 

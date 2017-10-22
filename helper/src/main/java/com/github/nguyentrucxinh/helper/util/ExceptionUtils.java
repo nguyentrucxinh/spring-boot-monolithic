@@ -12,9 +12,9 @@ import java.util.List;
  *
  * @author Xinh Nguyen
  */
-public class ExceptionUtil {
+public class ExceptionUtils {
 
-    private ExceptionUtil() {
+    private ExceptionUtils() {
     }
 
     /**

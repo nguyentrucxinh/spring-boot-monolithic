@@ -4,7 +4,7 @@ import com.github.nguyentrucxinh.helper.exception.DTOInControllerNotValidExcepti
 import com.github.nguyentrucxinh.helper.exception.DTOInServiceNotValidException;
 import com.github.nguyentrucxinh.helper.response.ExceptionDetail;
 import com.github.nguyentrucxinh.helper.response.ExceptionDetailBuilder;
-import com.github.nguyentrucxinh.helper.util.ExceptionUtil;
+import com.github.nguyentrucxinh.helper.util.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -99,7 +99,7 @@ public class GlobalControllerExceptionHandler extends ResponseEntityExceptionHan
     public ResponseEntity<Object> handleConstraintViolationException(final ConstraintViolationException ex, final WebRequest request) {
         logger.info("> handleException");
         logger.error("- Exception: ", ex);
-        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtil.convertConstraintViolationExceptionToListErrorMsg(ex))
+        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtils.convertConstraintViolationExceptionToListErrorMsg(ex))
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR).webRequest(request).build();
         logger.info("< handleException");
         return handleExceptionInternal(ex, detail, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
@@ -116,7 +116,7 @@ public class GlobalControllerExceptionHandler extends ResponseEntityExceptionHan
     public ResponseEntity<Object> handleDTOInControllerNotValidException(final DTOInControllerNotValidException ex, final WebRequest request) {
         logger.info("> handleException");
         logger.error("- Exception: ", ex);
-        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtil.convertBindingResultToListErrorMsg(ex.getBindingResult()))
+        final ExceptionDetail detail = new ExceptionDetailBuilder().exception(ex).exceptionDetail(ExceptionUtils.convertBindingResultToListErrorMsg(ex.getBindingResult()))
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR).webRequest(request).build();
         logger.info("< handleException");
         return handleExceptionInternal(ex, detail, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);

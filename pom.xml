@@ -35,6 +35,7 @@
         <swagger.version>2.7.0</swagger.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <lombok.version>1.16.18</lombok.version>
+        <modelmapper.version>1.1.0</modelmapper.version>
     </properties>
 
     <dependencies>
@@ -94,6 +95,13 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!-- Mapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
         </dependency>
 
     </dependencies>
