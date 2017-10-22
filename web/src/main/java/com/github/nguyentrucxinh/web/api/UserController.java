@@ -19,10 +19,11 @@ public class UserController implements BaseController<UserDTO, Long> {
 
     @Autowired
     private UserService userService;
-    
+
+    @GetMapping
     @Override
     public Page<UserDTO> findAll(Pageable pageable) {
-        return null;
+        return userService.findAll(pageable);
     }
 
     @Override

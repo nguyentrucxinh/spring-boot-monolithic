@@ -6,12 +6,15 @@ import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
 import com.github.nguyentrucxinh.service.mapper.UserMapper;
 import com.github.nguyentrucxinh.service.validation.UserValidation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,7 +32,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<UserDTO> findAll(Pageable pageable) {
-        return null;
+        Page<User> users = userRepository.findAll(pageable);
+
+        List<UserDTO> userDTOS = new ArrayList<>();
+        BeanUtils.copyProperties(users.getContent(), userDTOS);
+
+        return new PageImpl<>(userDTOS, pageable, users.getTotalElements());
     }
 
     @Override
@@ -41,6 +49,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO findById(Long id) {
         User user = userRepository.findOne(id);
+        UserDTO userDTO = new UserDTO();
+        BeanUtils.copyProperties(user, userDTO);
         return userMapper.userToUserDTO(user);
     }
 
