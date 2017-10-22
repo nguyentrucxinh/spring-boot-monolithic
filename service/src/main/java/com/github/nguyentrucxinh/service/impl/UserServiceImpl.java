@@ -34,7 +34,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDTO> findAll() {
-        return null;
+        List<User> users = userRepository.findAll();
+        return userMapper.usersToUserDTOs(users);
     }
 
     @Override
@@ -45,16 +46,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Long create(UserDTO userDTO) {
-        return null;
+        User user = userMapper.userDTOToUser(userDTO);
+        return userRepository.save(user).getId();
     }
 
     @Override
     public void update(Long id, UserDTO userDTO) {
-
+        User user = userRepository.findOne(id);
+        user.setLastName(userDTO.getLastName());
+        user.setFirstName(userDTO.getFirstName());
+        userRepository.save(user);
     }
 
     @Override
     public void deleteById(Long id) {
-
+        userRepository.delete(id);
     }
 }
