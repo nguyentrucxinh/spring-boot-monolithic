@@ -48,16 +48,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Long create(UserDto userDTO) {
-        User user = modelMapper.map(userDTO, User.class);
+    public Long create(UserDto userDto) {
+        User user = modelMapper.map(userDto, User.class);
         return userRepository.save(user).getId();
     }
 
     @Override
-    public void update(Long id, UserDto userDTO) {
+    public void update(Long id, UserDto userDto) {
         User user = userRepository.findOne(id);
-        user.setLastName(userDTO.getLastName());
-        user.setFirstName(userDTO.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setFirstName(userDto.getFirstName());
         userRepository.save(user);
     }
 
