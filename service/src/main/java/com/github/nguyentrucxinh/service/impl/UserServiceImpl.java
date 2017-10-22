@@ -24,6 +24,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserValidation userValidation;
 
+    @Autowired
+    private UserMapper userMapper;
+
     @Override
     public Page<UserDTO> findAll(Pageable pageable) {
         return null;
@@ -37,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO findById(Long id) {
         User user = userRepository.findOne(id);
-        return UserMapper.INSTANCE.userToUserDTO(user);
+        return userMapper.userToUserDTO(user);
     }
 
     @Override

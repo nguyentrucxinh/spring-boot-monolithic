@@ -52,9 +52,9 @@
 ## SESSION 3: 3RD PARTY
 - [x] SLF4J (Simple Logging Facade for Java)
 - [x] Swagger
-- [ ] Jackson
+- [x] Jackson
 - [ ] Hibernate
-- [ ] Lombok
+- [x] Lombok
 - [ ] Higher-level database migration tool
   + [ ] Liquibase
   + [ ] Flyway
