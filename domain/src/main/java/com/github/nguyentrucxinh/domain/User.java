@@ -2,13 +2,11 @@ package com.github.nguyentrucxinh.domain;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class User extends BaseEntityAudit {
 
     @Id
