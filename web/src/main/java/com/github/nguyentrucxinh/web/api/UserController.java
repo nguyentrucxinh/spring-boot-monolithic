@@ -1,6 +1,6 @@
 package com.github.nguyentrucxinh.web.api;
 
-import com.github.nguyentrucxinh.dto.UserDTO;
+import com.github.nguyentrucxinh.dto.UserDto;
 import com.github.nguyentrucxinh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,38 +12,38 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserController implements BaseController<UserDTO, Long> {
+public class UserController implements BaseController<UserDto, Long> {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/paging")
     @Override
-    public Page<UserDTO> findAll(Pageable pageable) {
+    public Page<UserDto> findAll(Pageable pageable) {
         return userService.findAll(pageable);
     }
 
     @GetMapping
     @Override
-    public List<UserDTO> findAll() {
+    public List<UserDto> findAll() {
         return userService.findAll();
     }
 
     @GetMapping("/{id}")
     @Override
-    public UserDTO findById(@PathVariable Long id) {
+    public UserDto findById(@PathVariable Long id) {
         return userService.findById(id);
     }
 
     @PostMapping
     @Override
-    public Long create(UserDTO userDTO, BindingResult bindingResult) {
+    public Long create(UserDto userDTO, BindingResult bindingResult) {
         return userService.create(userDTO);
     }
 
     @PutMapping("/{id}")
     @Override
-    public void update(Long id, UserDTO userDTO, BindingResult bindingResult) {
+    public void update(Long id, UserDto userDTO, BindingResult bindingResult) {
         userService.update(id, userDTO);
     }
 

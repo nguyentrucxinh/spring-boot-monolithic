@@ -3,24 +3,18 @@ package com.github.nguyentrucxinh.dto;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
-public class HotelDTO extends BaseDTO implements Serializable {
+public class HotelDto extends BaseDto implements Serializable {
 
     private Long id;
 
-    @NotNull(groups = {HotelDTO.validateOnCreate.class, HotelDTO.validateOnUpdate.class})
+    @NotNull(groups = {HotelDto.validateOnCreate.class, HotelDto.validateOnUpdate.class})
     private String name;
 
     private Integer classification;
 
-    private Boolean isOpen;
+    private boolean open;
 
-    public HotelDTO() {
-    }
-
-    public HotelDTO(String name, Integer classification, Boolean isOpen) {
-        this.name = name;
-        this.classification = classification;
-        this.isOpen = isOpen;
+    public HotelDto() {
     }
 
     public Long getId() {
@@ -47,12 +41,12 @@ public class HotelDTO extends BaseDTO implements Serializable {
         this.classification = classification;
     }
 
-    public Boolean getOpen() {
-        return isOpen;
+    public boolean isOpen() {
+        return open;
     }
 
-    public void setOpen(Boolean open) {
-        isOpen = open;
+    public void setOpen(boolean open) {
+        this.open = open;
     }
 }
 

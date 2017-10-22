@@ -1,7 +1,7 @@
 package com.github.nguyentrucxinh.web.api;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.github.nguyentrucxinh.domain.Hotel;
+import com.github.nguyentrucxinh.dto.HotelDto;
 import com.github.nguyentrucxinh.helper.exception.CustomNotFoundException;
 import com.github.nguyentrucxinh.helper.exception.DTOInControllerNotValidException;
 import com.github.nguyentrucxinh.helper.util.Views;
@@ -28,7 +28,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/hotels")
-public class HotelController implements BaseController<Hotel, Long> {
+public class HotelController implements BaseController<HotelDto, Long> {
 
     private static Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 //    private static Logger LOGGER = LoggerFactory.getLogger(HotelController.class);
@@ -45,14 +45,14 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "${HotelController.findAllPaging.title}", notes = "${HotelController.findAllPaging.notes}")
     @GetMapping("/paging")
     @Override
-    public Page<Hotel> findAll(@PageableDefault(size = 2, page = 1, sort = "name") Pageable pageable) {
+    public Page<HotelDto> findAll(@PageableDefault(size = 10, page = 0, sort = "name") Pageable pageable) {
         return hotelService.findAll(pageable);
     }
 
     @ApiOperation(value = "${HotelController.findAll.title}", notes = "${HotelController.findAll.notes}")
     @GetMapping
     @Override
-    public List<Hotel> findAll() {
+    public List<HotelDto> findAll() {
         LOGGER.debug("Debug log message");
         LOGGER.info("Info log message");
         LOGGER.error("Error log message");
@@ -64,26 +64,26 @@ public class HotelController implements BaseController<Hotel, Long> {
     @ApiOperation(value = "${HotelController.findById.title}", notes = "${HotelController.findById.notes}")
     @GetMapping("/{id}")
     @Override
-    public Hotel findById(@PathVariable Long id) {
+    public HotelDto findById(@PathVariable Long id) {
         return hotelService.findById(id);
     }
 
     @ApiOperation(value = "${HotelController.create.title}", notes = "${HotelController.create.notes}")
     @PostMapping
     @Override
-    public Long create(@Validated @RequestBody Hotel hotel, BindingResult bindingResult) {
+    public Long create(@Validated @RequestBody HotelDto hotelDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
-        return hotelService.create(hotel);
+        return hotelService.create(hotelDto);
     }
 
     @ApiOperation(value = "${HotelController.update.title}", notes = "${HotelController.update.notes}")
     @PutMapping("/{id}")
     @Override
-    public void update(@PathVariable Long id, @Validated @RequestBody Hotel hotel, BindingResult bindingResult) {
+    public void update(@PathVariable Long id, @Validated @RequestBody HotelDto hotelDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
-        hotelService.update(id, hotel);
+        hotelService.update(id, hotelDto);
     }
 
     @ApiOperation(value = "${HotelController.delete.title}", notes = "${HotelController.delete.notes}")
@@ -110,13 +110,13 @@ public class HotelController implements BaseController<Hotel, Long> {
      */
 
     @PostMapping("/public")
-    public Hotel postPublicView(@JsonView(Views.Public.class) @RequestBody Hotel hotel) {
-        return hotel;
+    public HotelDto postPublicView(@JsonView(Views.Public.class) @RequestBody HotelDto hotelDto) {
+        return hotelDto;
     }
 
     @PostMapping("/internal")
-    public Hotel postInternalView(@JsonView(Views.Internal.class) @RequestBody Hotel hotel) {
-        return hotel;
+    public HotelDto postInternalView(@JsonView(Views.Internal.class) @RequestBody HotelDto hotelDto) {
+        return hotelDto;
     }
 
     /*
@@ -125,13 +125,13 @@ public class HotelController implements BaseController<Hotel, Long> {
 
     @JsonView(Views.Public.class)
     @GetMapping("/public")
-    public Hotel postPublicView() {
+    public HotelDto postPublicView() {
         return hotelService.findById(1L);
     }
 
     @JsonView(Views.Internal.class)
     @GetMapping("/internal")
-    public Hotel postInternalView() {
+    public HotelDto postInternalView() {
         return hotelService.findById(1L);
     }
 
@@ -148,7 +148,7 @@ public class HotelController implements BaseController<Hotel, Long> {
             dataType = "string",
             paramType = "header"))
     @GetMapping("/sample-swagger/{companyId}")
-    public ResponseEntity<Page<Hotel>> sampleSwagger(
+    public ResponseEntity<Page<HotelDto>> sampleSwagger(
             @ApiParam(value = "The primary key of Company") @PathVariable Long companyId, Pageable pageable) {
         return null;
 

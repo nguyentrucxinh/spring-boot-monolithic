@@ -25,10 +25,10 @@
             <version>0.0.1-SNAPSHOT</version>
             <!-- //TODO: Apply when use DTO -->
             <!--<exclusions>-->
-            <!--<exclusion>-->
-            <!--<groupId>com.github.nguyentrucxinh</groupId>-->
-            <!--<artifactId>domain</artifactId>-->
-            <!--</exclusion>-->
+                <!--<exclusion>-->
+                    <!--<groupId>com.github.nguyentrucxinh</groupId>-->
+                    <!--<artifactId>domain</artifactId>-->
+                <!--</exclusion>-->
             <!--</exclusions>-->
         </dependency>
         <dependency>
@@ -37,10 +37,10 @@
             <version>0.0.1-SNAPSHOT</version>
             <!-- //TODO: Apply when use DTO -->
             <!--<exclusions>-->
-            <!--<exclusion>-->
-            <!--<groupId>com.github.nguyentrucxinh</groupId>-->
-            <!--<artifactId>domain</artifactId>-->
-            <!--</exclusion>-->
+                <!--<exclusion>-->
+                    <!--<groupId>com.github.nguyentrucxinh</groupId>-->
+                    <!--<artifactId>domain</artifactId>-->
+                <!--</exclusion>-->
             <!--</exclusions>-->
         </dependency>
 

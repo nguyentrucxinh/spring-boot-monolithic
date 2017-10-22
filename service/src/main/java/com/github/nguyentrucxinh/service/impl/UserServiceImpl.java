@@ -1,7 +1,7 @@
 package com.github.nguyentrucxinh.service.impl;
 
 import com.github.nguyentrucxinh.domain.User;
-import com.github.nguyentrucxinh.dto.UserDTO;
+import com.github.nguyentrucxinh.dto.UserDto;
 import com.github.nguyentrucxinh.helper.util.ModelMapperUtils;
 import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
@@ -30,31 +30,31 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public Page<UserDTO> findAll(Pageable pageable) {
+    public Page<UserDto> findAll(Pageable pageable) {
         Page<User> users = userRepository.findAll(pageable);
-        return modelMapper.map(users, ModelMapperUtils.pageType(UserDTO.class));
+        return modelMapper.map(users, ModelMapperUtils.pageType(UserDto.class));
     }
 
     @Override
-    public List<UserDTO> findAll() {
+    public List<UserDto> findAll() {
         List<User> users = userRepository.findAll();
-        return modelMapper.map(users, ModelMapperUtils.listType(UserDTO.class));
+        return modelMapper.map(users, ModelMapperUtils.listType(UserDto.class));
     }
 
     @Override
-    public UserDTO findById(Long id) {
+    public UserDto findById(Long id) {
         User user = userRepository.findOne(id);
-        return modelMapper.map(user, UserDTO.class);
+        return modelMapper.map(user, UserDto.class);
     }
 
     @Override
-    public Long create(UserDTO userDTO) {
+    public Long create(UserDto userDTO) {
         User user = modelMapper.map(userDTO, User.class);
         return userRepository.save(user).getId();
     }
 
     @Override
-    public void update(Long id, UserDTO userDTO) {
+    public void update(Long id, UserDto userDTO) {
         User user = userRepository.findOne(id);
         user.setLastName(userDTO.getLastName());
         user.setFirstName(userDTO.getFirstName());

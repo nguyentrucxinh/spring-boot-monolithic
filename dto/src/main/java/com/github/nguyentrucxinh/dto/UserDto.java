@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Max;
 
-public class UserDTO extends BaseDTO {
+public class UserDto extends BaseDto {
 
     @JsonView(Views.Public.class)
     @Max(MySQLConstant.BIGINT_MAX)
@@ -17,13 +17,13 @@ public class UserDTO extends BaseDTO {
 
     @JsonView(Views.Public.class)
     @Length(max = MySQLConstant.VARCHAR_MAX)
-    @NotBlank(groups = {UserDTO.validateOnCreate.class, UserDTO.validateOnUpdate.class})
+    @NotBlank(groups = {UserDto.validateOnCreate.class, UserDto.validateOnUpdate.class})
     private String username;
 
     @JsonView(Views.Internal.class)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Length(max = MySQLConstant.VARCHAR_MAX)
-    @NotBlank(groups = UserDTO.validateOnCreate.class)
+    @NotBlank(groups = UserDto.validateOnCreate.class)
     private String password;
 
     @JsonView(Views.Internal.class)
@@ -31,15 +31,15 @@ public class UserDTO extends BaseDTO {
 
     @JsonView(Views.Public.class)
     @Length(max = MySQLConstant.VARCHAR_MAX)
-    @NotBlank(groups = {UserDTO.validateOnCreate.class, UserDTO.validateOnUpdate.class})
+    @NotBlank(groups = {UserDto.validateOnCreate.class, UserDto.validateOnUpdate.class})
     private String firstName;
 
     @JsonView(Views.Public.class)
     @Length(max = MySQLConstant.VARCHAR_MAX)
-    @NotBlank(groups = {UserDTO.validateOnCreate.class, UserDTO.validateOnUpdate.class})
+    @NotBlank(groups = {UserDto.validateOnCreate.class, UserDto.validateOnUpdate.class})
     private String lastName;
 
-    public UserDTO() {
+    public UserDto() {
     }
 
     public Long getId() {
