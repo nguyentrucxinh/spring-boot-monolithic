@@ -1,6 +1,7 @@
 package com.github.nguyentrucxinh.web.api;
 
 import com.github.nguyentrucxinh.dto.UserDto;
+import com.github.nguyentrucxinh.helper.constraint.ValidParamNumber;
 import com.github.nguyentrucxinh.helper.exception.DTOInControllerNotValidException;
 import com.github.nguyentrucxinh.service.UserService;
 import io.swagger.annotations.ApiOperation;
@@ -65,5 +66,10 @@ public class UserController implements BaseController<UserDto, Long> {
     @Override
     public void deleteById(@PathVariable Long id) {
         userService.deleteById(id);
+    }
+
+    @GetMapping("/validate-path-variable/{id}")
+    public void validatePathVariable(@ValidParamNumber @PathVariable Long id) {
+        // throw exception if id <= 0 || id > Long.MAX_VALUE
     }
 }
