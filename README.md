@@ -50,17 +50,34 @@
 - [ ] DDD
 
 ## SESSION 3: 3RD PARTY
+- Bean Mapping
+  + [x] Mapstruct (Removed cause must rebuild it to get implement class every run) 
+  + [x] Mapper of Spring Framework `org.springframework.beans.BeanUtils` (Removed cause it very simple) 
+  + [x] ModelMapper
+  + [ ] Dozer
+  + [ ] Orika
+
+- Build
+  + [x] Maven
+  + [ ] Gradle 
+
+- Caching
+  + [ ] Caffeine
+  + [ ] EhCache
+  + [ ] Infinispan
+  
+- Database
+  + [ ] Liquibase
+  + [ ] Flyway
+  + [ ] HikariCP
+  + [ ] Jedis
+
 - Server:
   + [x] Tomcat (Replace to Jetty)
   + [ ] Tomcat EE
   + [x] Jetty
   + [ ] WildFly
   + [ ] GlassFish
-
-- Bean Mapping
-  + [x] Mapstruct (Removed cause must rebuild it to get implement class every run) 
-  + [x] Mapper of Spring Framework `org.springframework.beans.BeanUtils` (Removed cause it very simple) 
-  + [x] ModelMapper
  
 - Logging:
   + [x] SLF4J (Simple Logging Facade for Java)
@@ -83,12 +100,9 @@
 
 - Web Crawling
   + [ ] JSoup
-
-- [ ] Higher-level database migration tool
-  + [ ] Liquibase
-  + [ ] Flyway
   
-- [x] Swagger
+- Document Processing
+  + [x] Swagger
 
 - ORM
   + [ ] Hibernate
@@ -96,15 +110,20 @@
 - Search
   + [ ] Elasticsearch
   + [ ] Apache Solr
-
-- Caching
-  + [ ] EhCache
  
 - [ ] Joda DateTime
 - [ ] RabbitMQ (message broker)
 - [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
 - [ ] LDAP (Lightweight Directory Access Protocol)
 
+- Microservice
+  + [ ] Apollo
+  + [ ] consul-api
+  + [ ] Eureka
+  + [ ] Lagom
+  + [ ] Hystrix 
+  + [ ] Zuul  
+  
 ---
 ***
 ___
