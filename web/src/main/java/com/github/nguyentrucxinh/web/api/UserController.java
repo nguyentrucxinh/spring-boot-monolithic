@@ -45,7 +45,7 @@ public class UserController implements BaseController<UserDto, Long> {
     @ApiOperation(value = "${UserController.create.title}", notes = "${UserController.create.notes}")
     @PostMapping
     @Override
-    public Long create(@Validated @RequestBody UserDto userDTO, BindingResult bindingResult) {
+    public Long create(@Validated(UserDto.validateOnCreate.class) @RequestBody UserDto userDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
         return userService.create(userDTO);
@@ -54,7 +54,7 @@ public class UserController implements BaseController<UserDto, Long> {
     @ApiOperation(value = "${UserController.update.title}", notes = "${UserController.update.notes}")
     @PutMapping("/{id}")
     @Override
-    public void update(@PathVariable Long id, @Validated @RequestBody UserDto userDTO, BindingResult bindingResult) {
+    public void update(@PathVariable Long id, @Validated(UserDto.validateOnUpdate.class) @RequestBody UserDto userDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             throw new DTOInControllerNotValidException(bindingResult);
         userService.update(id, userDTO);

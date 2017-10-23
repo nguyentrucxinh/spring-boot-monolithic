@@ -17,10 +17,6 @@ import javax.validation.constraints.Max;
 public class HotelDto extends BaseDto {
 
     @JsonView(Views.Public.class)
-    @Max(MySQLConstant.BIGINT_MAX)
-    private Long id;
-
-    @JsonView(Views.Public.class)
     @Length(max = MySQLConstant.VARCHAR_MAX)
     @NotBlank(groups = {HotelDto.validateOnCreate.class, HotelDto.validateOnUpdate.class})
     private String name;

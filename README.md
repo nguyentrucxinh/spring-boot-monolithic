@@ -27,13 +27,13 @@
   + BaseService
   + BaseController
 - [x] Helper: Util & Bean
-- [ ] JPA
+- [x] Custom response data {status_code, message, data, ...}
+- [x] JPA
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT
-- [ ] Custom response data {status_code, message, data}
-- [ ] Live Reload
+- [ ] Live Reload (spring-boot-devtools)
 
 ## SESSION 1: INTERMEDIATE
 - [ ] Async
@@ -53,12 +53,13 @@
 - [x] SLF4J (Simple Logging Facade for Java)
 - [x] Swagger
 - [x] Jackson
-- [ ] Hibernate
 - [x] Lombok
+- [x] ModelMapper
+- [ ] Joda DateTime
+- [ ] Hibernate
 - [ ] Higher-level database migration tool
   + [ ] Liquibase
   + [ ] Flyway
-- [ ] ModelMapper
 - [ ] JUnit
 - [ ] RabbitMQ (message broker)
 - [ ] EhCache
@@ -85,8 +86,8 @@ ___
 
 ## ACCESS LINK
 - Swagger:
-http://localhost:8080/docs
-http://localhost:8080/swagger-ui.html
+  + http://localhost:8080/docs
+  + http://localhost:8080/swagger-ui.html
 - Actuator:
-http://localhost:8080/health
-http://localhost:8080/info
+  + http://localhost:8080/health
+  + http://localhost:8080/info
