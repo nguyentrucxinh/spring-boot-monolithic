@@ -17,3 +17,22 @@ HotelController:
   delete:
     title: Delete an exist hotel
     notes: Deletes a hotel object
+UserController:
+  findAllPaging:
+    title: List all of paging users
+    notes: Retrieves a Paging Collection of user objects
+  findAll:
+    title: List all of users
+    notes: Retrieves a Collection of user objects
+  findById:
+    title: Find a user by id
+    notes: Retrieves a user object
+  create:
+    title: Add a new user
+    notes: Creates a user object
+  update:
+    title: Update an exist user
+    notes: Updates a user object
+  delete:
+    title: Delete an exist user
+    notes: Deletes a user object

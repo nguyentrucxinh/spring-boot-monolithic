@@ -1,8 +1,15 @@
 package com.github.nguyentrucxinh.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Getter
+@ToString(of = {"id"})
+@EqualsAndHashCode(of = {"id"})
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
@@ -17,41 +24,4 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "version")
     @Version
     private Long version;
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getVersion() {
-        return version;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (this.getId() != null ? this.getId().hashCode() : 0);
-
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (this == object)
-            return true;
-        if (object == null)
-            return false;
-        if (getClass() != object.getClass())
-            return false;
-
-        BaseEntity other = (BaseEntity) object;
-        if (this.getId() != other.getId() && (this.getId() == null || !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.getClass().getName() + " [ID=" + id + "]";
-    }
 }
