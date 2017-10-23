@@ -29,11 +29,11 @@
 - [x] Helper: Util & Bean
 - [x] Custom response data {status_code, message, data, ...}
 - [x] JPA
+- [x] Live Reload (spring-boot-devtools) (Removed to get more performance when coding)
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
 - [ ] OAuth2
 - [ ] JWT
-- [ ] Live Reload (spring-boot-devtools)
 
 ## SESSION 1: INTERMEDIATE
 - [ ] Async
@@ -44,28 +44,66 @@
 - [ ] Task scheduling
 - [ ] File storage
 - [ ] Mocking
-- [ ] Multiple database
+- [ ] Multiple database (eg: Multiple MySQL, ...)
 
 ## SESSION 2: ADVANCE
 - [ ] DDD
 
 ## SESSION 3: 3RD PARTY
-- [x] SLF4J (Simple Logging Facade for Java)
-- [x] Swagger
-- [x] Jackson
-- [x] Lombok
-- [x] ModelMapper
-- [ ] Joda DateTime
-- [ ] Hibernate
+- Server:
+  + [x] Tomcat (Replace to Jetty)
+  + [ ] Tomcat EE
+  + [x] Jetty
+  + [ ] WildFly
+  + [ ] GlassFish
+
+- Bean Mapping
+  + [x] Mapstruct (Removed cause must rebuild it to get implement class every run) 
+  + [x] Mapper of Spring Framework `org.springframework.beans.BeanUtils` (Removed cause it very simple) 
+  + [x] ModelMapper
+ 
+- Logging:
+  + [x] SLF4J (Simple Logging Facade for Java)
+  + [ ] Log4j
+  + [ ] Logback
+  
+- JSON
+  + [x] Jackson
+
+- Code Generators
+  + [x] Lombok
+
+- Testing
+  + [ ] JUnit
+  + [ ] Arquillian
+  + [ ] Mockito
+
+- Utility
+  + [ ] Guava
+
+- Web Crawling
+  + [ ] JSoup
+
 - [ ] Higher-level database migration tool
   + [ ] Liquibase
   + [ ] Flyway
-- [ ] JUnit
+  
+- [x] Swagger
+
+- ORM
+  + [ ] Hibernate
+
+- Search
+  + [ ] Elasticsearch
+  + [ ] Apache Solr
+
+- Caching
+  + [ ] EhCache
+ 
+- [ ] Joda DateTime
 - [ ] RabbitMQ (message broker)
-- [ ] EhCache
 - [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
 - [ ] LDAP (Lightweight Directory Access Protocol)
-- [ ] Elasticsearch
 
 ---
 ***
