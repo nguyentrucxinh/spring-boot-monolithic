@@ -2,6 +2,8 @@ package com.github.nguyentrucxinh.service.impl;
 
 import com.github.nguyentrucxinh.domain.User;
 import com.github.nguyentrucxinh.dto.UserDto;
+import com.github.nguyentrucxinh.helper.exception.DTOInServiceNotValidException;
+import com.github.nguyentrucxinh.helper.response.ExceptionDetailMessage;
 import com.github.nguyentrucxinh.helper.util.ModelMapperUtils;
 import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
@@ -28,7 +30,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ModelMapper modelMapper;
 
-
     @Override
     public Page<UserDto> findAll(Pageable pageable) {
         Page<User> users = userRepository.findAll(pageable);
@@ -43,6 +44,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto findById(Long id) {
+        // Validate User Id
+        List<ExceptionDetailMessage> exceptionDetailMessages = userValidation.isValidateUserId(id);
+        if (!exceptionDetailMessages.isEmpty())
+            throw new DTOInServiceNotValidException(exceptionDetailMessages);
+
         User user = userRepository.findOne(id);
         return modelMapper.map(user, UserDto.class);
     }
@@ -55,6 +61,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(Long id, UserDto userDto) {
+        // Validate User Id
+        List<ExceptionDetailMessage> exceptionDetailMessages = userValidation.isValidateUserId(id);
+        if (!exceptionDetailMessages.isEmpty())
+            throw new DTOInServiceNotValidException(exceptionDetailMessages);
+
         User user = userRepository.findOne(id);
         user.setLastName(userDto.getLastName());
         user.setFirstName(userDto.getFirstName());
@@ -63,6 +74,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(Long id) {
+        // Validate User Id
+        List<ExceptionDetailMessage> exceptionDetailMessages = userValidation.isValidateUserId(id);
+        if (!exceptionDetailMessages.isEmpty())
+            throw new DTOInServiceNotValidException(exceptionDetailMessages);
+
         userRepository.delete(id);
     }
 }

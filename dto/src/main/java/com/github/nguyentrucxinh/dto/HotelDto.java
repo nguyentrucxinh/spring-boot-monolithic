@@ -3,13 +3,17 @@ package com.github.nguyentrucxinh.dto;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.github.nguyentrucxinh.helper.constant.MySQLConstant;
 import com.github.nguyentrucxinh.helper.util.Views;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.Max;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class HotelDto extends BaseDto {
 
     @JsonView(Views.Public.class)

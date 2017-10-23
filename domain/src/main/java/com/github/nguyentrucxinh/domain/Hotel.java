@@ -1,21 +1,19 @@
 package com.github.nguyentrucxinh.domain;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import com.github.nguyentrucxinh.helper.util.Views;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "hotels")
-public class Hotel implements Serializable {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Hotel extends BaseEntityAudit {
 
     @Column(unique = true)
     private String name;
