@@ -1,6 +1,5 @@
 # Common file
-hotels.db.mv.db
-hotels.db.trace.db
+/web/data
 
 # Log file
 **/logs

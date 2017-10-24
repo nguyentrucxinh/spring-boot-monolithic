@@ -1,42 +1,11 @@
 spring:
     profiles:
-        active: dev, docs
-info:
-    app:
-        name: Spring Sample Application
-        description: This is my first spring boot application
-        version: 1.0.0
----
-spring:
-    profiles: prod
-    datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        password: root
-        url: jdbc:mysql://localhost/db?useSSL=false
-        username: root
-    jpa:
-        hibernate:
-            ddl-auto: validate
-
----
-spring:
-    profiles: dev2
-    datasource:
-        url: jdbc:h2:file:./hotels.db
----
-spring:
-    profiles: dev
+        active: h2, docs
     output:
         ansi:
             enabled: DETECT
-    datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        password: 123
-        url: jdbc:mysql://localhost/spring-monolithic?createDatabaseIfNotExist=true
-        username: root
     jpa:
         hibernate:
-            ddl-auto: create-drop
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         properties:
@@ -60,6 +29,42 @@ logging:
         console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
         file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
 
+info:
+    app:
+        name: Spring Sample Application
+        description: This is my first spring boot application
+        version: 1.0.0
+
 user:
     firstname: nguyen
     lastname: xinh
+---
+spring:
+    profiles: prod
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/db?useSSL=false
+        username: root
+        password: root
+    jpa:
+        hibernate:
+            ddl-auto: validate
+---
+spring:
+    profiles: h2
+    datasource:
+        url: jdbc:h2:./data/spring-monolithic;MODE=MYSQL # jdbc:h2:mem:test_mem
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+---
+spring:
+    profiles: dev
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/spring-monolithic?createDatabaseIfNotExist=true
+        username: root
+        password: 123
+    jpa:
+        hibernate:
+            ddl-auto: create-drop

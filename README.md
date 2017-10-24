@@ -123,8 +123,8 @@ ___
 
 ## RUN LOCALLY
 - Create database first
-- Dev:  ```mvn spring-boot:run```
-- Dev2: ```mvn spring-boot:run -Dspring.profiles.active=dev2```
+- h2:  ```mvn spring-boot:run```
+- Dev: ```mvn spring-boot:run -Dspring.profiles.active=dev```
 - Prod: ```mvn spring-boot:run -Dspring.profiles.active=prod```
 
 ## ACCESS LINK
