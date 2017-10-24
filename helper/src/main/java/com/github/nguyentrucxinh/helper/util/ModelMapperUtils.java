@@ -1,6 +1,8 @@
 package com.github.nguyentrucxinh.helper.util;
 
+import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 
 import java.lang.reflect.Type;
@@ -22,5 +24,10 @@ public class ModelMapperUtils {
 
     public static <T> Type pageType(Class<T> type) {
         return new TypeToken<Page<T>>() {}.getType();
+    }
+
+    public static <A, B> Page<B> toPage(Page<A> pageA, Class<B> clazzB) {
+        ModelMapper modelMapper = new ModelMapper();
+        return pageA.map(a -> modelMapper.map(a, clazzB));
     }
 }
