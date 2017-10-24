@@ -139,3 +139,5 @@ ___
 - Actuator:
   + http://localhost:8080/health
   + http://localhost:8080/info
+- H2 console:
+  + http://localhost:8080/h2-console
