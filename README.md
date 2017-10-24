@@ -30,6 +30,10 @@
 - [x] Custom response data {status_code, message, data, ...}
 - [x] JPA
 - [x] Live Reload (spring-boot-devtools) (Removed to get more performance when coding)
+- [x] Get property from application.yml (application.properties) (@Value & Environment)
+- [x] Validation groups
+- [x] Jackson @JsonView (multiple view)
+- [x] Jackson @JsonProperty
 - [ ] MongoDB (NoSQL)
 - [ ] HATEOAS
 - [ ] OAuth2
@@ -84,6 +88,7 @@
 
 - ORM:
   + [ ] Hibernate
+  + [ ] Cache Level Hibernate
 
 - Testing:
   + [ ] JUnit
