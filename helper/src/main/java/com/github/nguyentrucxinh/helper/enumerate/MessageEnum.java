@@ -6,7 +6,9 @@ public enum MessageEnum {
 
     NOT_EXIST("Does not exist"),
 
-    ALREADY_DELETED("Already deleted");
+    ALREADY_DELETED("Already deleted"),
+
+    NOT_NULL("May be not null");
 
     private final String message;
 

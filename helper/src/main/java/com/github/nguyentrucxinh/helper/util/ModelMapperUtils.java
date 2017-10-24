@@ -6,6 +6,11 @@ import org.springframework.data.domain.Page;
 import java.lang.reflect.Type;
 import java.util.List;
 
+/**
+ * Defines all behaviors support for ModelMapper
+ *
+ * @author Xinh Nguyen
+ */
 public class ModelMapperUtils {
 
     private ModelMapperUtils() {
