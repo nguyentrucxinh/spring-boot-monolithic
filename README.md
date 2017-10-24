@@ -50,73 +50,59 @@
 - [ ] DDD
 
 ## SESSION 3: 3RD PARTY
-- Bean Mapping
+- Bean Mapping:
   + [x] Mapstruct (Removed cause must rebuild it to get implement class every run) 
-  + [x] Mapper of Spring Framework `org.springframework.beans.BeanUtils` (Removed cause it very simple) 
+  + [x] Mapper of Spring Framework `org.springframework.beans.BeanUtils` (Removed cause it very simple)
+  + [x] Mapper of Apache `BeanUtils` 
   + [x] ModelMapper
   + [ ] Dozer
   + [ ] Orika
 
-- Build
+- Build:
   + [x] Maven
   + [ ] Gradle 
 
-- Caching
-  + [ ] Caffeine
-  + [ ] EhCache
-  + [ ] Infinispan
-  
-- Database
-  + [ ] Liquibase
-  + [ ] Flyway
-  + [ ] HikariCP
-  + [ ] Jedis
-
 - Server:
   + [x] Tomcat (Replace to Jetty)
-  + [ ] Tomcat EE
   + [x] Jetty
-  + [ ] WildFly
-  + [ ] GlassFish
  
 - Logging:
   + [x] SLF4J (Simple Logging Facade for Java)
-  + [ ] Log4j
-  + [ ] Logback
   
-- JSON
+- JSON:
   + [x] Jackson
 
-- Code Generators
+- Code Generators:
   + [x] Lombok
 
-- Testing
+- Document Processing:
+  + [x] Swagger
+
+- Database tool:
+  + [ ] Liquibase
+  + [ ] Flyway
+
+- ORM:
+  + [ ] Hibernate
+
+- Testing:
   + [ ] JUnit
   + [ ] Arquillian
   + [ ] Mockito
 
-- Utility
+- [ ] Joda DateTime
+
+- Utility:
   + [ ] Guava
 
-- Web Crawling
+- Web Crawling:
   + [ ] JSoup
-  
-- Document Processing
-  + [x] Swagger
 
-- ORM
-  + [ ] Hibernate
-
-- Search
+- Search:
   + [ ] Elasticsearch
   + [ ] Apache Solr
- 
-- [ ] Joda DateTime
-- [ ] RabbitMQ (message broker)
-- [ ] Redis (in-memory data structure store, used as a database, cache and message broker)
-- [ ] LDAP (Lightweight Directory Access Protocol)
 
-- Microservice
+- Microservice:
   + [ ] Apollo
   + [ ] consul-api
   + [ ] Eureka
