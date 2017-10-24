@@ -4,6 +4,7 @@ import com.github.nguyentrucxinh.domain.User;
 import com.github.nguyentrucxinh.dto.UserDto;
 import com.github.nguyentrucxinh.helper.exception.DTOInServiceNotValidException;
 import com.github.nguyentrucxinh.helper.response.ExceptionDetailMessage;
+import com.github.nguyentrucxinh.helper.util.ListParameterizedType;
 import com.github.nguyentrucxinh.helper.util.ModelMapperUtils;
 import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> findAll() {
         List<User> users = userRepository.findAll();
-        return modelMapper.map(users, ModelMapperUtils.listType(UserDto.class));
+        return modelMapper.map(users, new ListParameterizedType(UserDto.class));
     }
 
     @Override
