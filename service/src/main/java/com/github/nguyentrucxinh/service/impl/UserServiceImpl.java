@@ -5,7 +5,6 @@ import com.github.nguyentrucxinh.dto.UserDto;
 import com.github.nguyentrucxinh.helper.exception.DTOInServiceNotValidException;
 import com.github.nguyentrucxinh.helper.response.ExceptionDetailMessage;
 import com.github.nguyentrucxinh.helper.util.ListParameterizedType;
-import com.github.nguyentrucxinh.helper.util.ModelMapperUtils;
 import com.github.nguyentrucxinh.repository.UserRepository;
 import com.github.nguyentrucxinh.service.UserService;
 import com.github.nguyentrucxinh.service.validation.UserValidation;
@@ -34,7 +33,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Page<UserDto> findAll(Pageable pageable) {
         Page<User> users = userRepository.findAll(pageable);
-        return modelMapper.map(users, ModelMapperUtils.pageType(UserDto.class));
+        return users.map(user -> modelMapper.map(user, UserDto.class));
     }
 
     @Override
