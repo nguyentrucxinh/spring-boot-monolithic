@@ -49,6 +49,7 @@
 - [ ] File storage
 - [ ] Mocking
 - [ ] Multiple database (eg: Multiple MySQL, ...)
+- [ ] HTTPS
 
 ## SESSION 2: ADVANCE
 - [ ] DDD
@@ -83,8 +84,8 @@
   + [x] Swagger
 
 - Cache:
-  + EhCache
-  + JCache (default cache Java)
+  + [ ] EhCache
+  + [ ] JCache (default cache Java)
 
 - Database migration tool:
   + [ ] Liquibase
