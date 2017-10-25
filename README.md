@@ -82,13 +82,17 @@
 - Document Processing:
   + [x] Swagger
 
-- Database tool:
+- Cache:
+  + EhCache
+  + JCache (default cache Java)
+
+- Database migration tool:
   + [ ] Liquibase
   + [ ] Flyway
 
 - ORM:
   + [ ] Hibernate
-  + [ ] Cache Level Hibernate
+  + [ ] Cache Level Hibernate (default Hibernate use EhCache)
 
 - Testing:
   + [ ] JUnit
